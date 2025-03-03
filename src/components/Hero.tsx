@@ -257,10 +257,7 @@ const Hero = () => {
           className="w-full"
         />
       </div>
-      <div
-        ref={heroRef}
-        className=" relative h-screen max-sm:h-[10vh] min-h-screen screen"
-      >
+      <div ref={heroRef} className=" relative h-[110vh] min-h-screen screen">
         {/* Background decorative elements */}
         <div className="hero-bg-element absolute -top-20 -left-20 w-64 h-64 rounded-full bg-[#FFC107]/10 blur-3xl"></div>
         <div className="hero-bg-element absolute top-1/3 -right-20 w-80 h-80 rounded-full bg-[#DA232A]/10 blur-3xl"></div>
@@ -320,7 +317,7 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="w-full max-sm:pt-0 max-sm:h-[35vh]" ref={imageRef}>
+            <div className="w-full max-sm:pt-0" ref={imageRef}>
               <div className="relative h-full w-full">
                 <div className="absolute h-full w-full -translate-x-1/2 left-[60%] top-[60%] -translate-y-1/2 animate-spin-slow max-sm:left-1/2 max-sm:top-1/2">
                   <Image
@@ -372,7 +369,7 @@ const Hero = () => {
         {/* Mobile scroll indicator */}
         <a
           href="#about"
-          className="hidden max-sm:block absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce z-40"
+          className="hidden max-sm:block absolute bottom-5 left-1/2 -translate-x-1/2 animate-bounce z-40"
         >
           <div className="w-8 h-12 rounded-full border-2 border-primaryred flex items-center justify-center">
             <div className="w-1.5 h-3 bg-primaryred rounded-full animate-scroll-indicator"></div>
