@@ -70,7 +70,7 @@ const Testimonials = () => {
 
       <section className="screen padding-top space-y-12 relative z-10">
         <div className="w-max mx-auto">
-          <CommonHeading title="What Our Students Say" />
+          <CommonHeading title="Testimonials" />
         </div>
 
         <div className="relative testimonial-slider px-12 max-sm:px-5">
