@@ -1,0 +1,35 @@
+import About from "@/components/About";
+import Blog from "@/components/Blog";
+import Course from "@/components/Course";
+import FeaturedCourse from "@/components/FeaturedCourse";
+import FilteredCourse from "@/components/FilteredCourse";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import Info from "@/components/Info";
+import Moto from "@/components/Moto";
+import Team from "@/components/Team";
+import Testimonials from "@/components/Testimonials";
+
+import WhyChooseUs from "@/components/WhyChooseUs";
+import Image from "next/image";
+import Swiper from "swiper";
+
+export default function Home() {
+  return (
+    <main className="bg-gradient-to-t from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE] overflow-x-clip">
+      <Hero />
+      <About />
+      <Course />
+      <WhyChooseUs />
+      <FeaturedCourse />
+      <Info />
+      <Team />
+      <FilteredCourse />
+      <Moto />
+      <Testimonials />
+      <Blog />
+      <Footer />
+    </main>
+  );
+}
