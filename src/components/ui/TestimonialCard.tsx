@@ -67,7 +67,7 @@ const TestimonialCard = () => {
   };
 
   return (
-    <div>
+    <section>
       <div
         className="relative w-max cursor-pointer overflow-hidden"
         ref={cardRef}
@@ -92,9 +92,9 @@ const TestimonialCard = () => {
         {/* Info Overlay  */}
         <div
           ref={infoOverlayRef}
-          className="absolute top-0 left-0 h-full w-full px-4 py-6 bg-[#961313] flex flex-col justify-between"
+          className="absolute top-0 left-0 h-full w-full px-4 py-6 bg-[#961313]  flex flex-col justify-between"
         >
-          <div className="flex justify-between">
+          <div className="flex justify-between max-sm:justify-start max-sm:space-x-3 items-center">
             <div className="flex gap-x-1">
               {[...Array(5)].map((_, i) => (
                 <IoStar key={i} className="text-white" />
@@ -126,7 +126,7 @@ const TestimonialCard = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

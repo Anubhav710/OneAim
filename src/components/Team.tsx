@@ -169,13 +169,13 @@ const Team = () => {
             breakpoints={{
               320: {
                 slidesPerView: 1,
-                spaceBetween: 10,
+                spaceBetween: 2,
               },
               640: {
                 slidesPerView: 2,
                 spaceBetween: 15,
               },
-              1024: {
+              1300: {
                 slidesPerView: 3,
                 spaceBetween: 20,
               },
