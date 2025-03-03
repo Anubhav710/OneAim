@@ -434,7 +434,7 @@ const Course: React.FC = () => {
 
           {/* Sub Categories Swiper */}
           <div className="relative  max-sm:px-7 pl-14">
-            {currentSubCourses.length > 4 && (
+            {currentSubCourses.length > 0 && (
               <button
                 className="custom-prev-button group absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white w-10 h-10 max-sm:w-7 max-sm:h-7 rounded-full shadow-lg flex items-center justify-center hover:bg-primaryred hover:text-white transition-colors duration-300"
                 aria-label="Previous slide"
@@ -460,7 +460,7 @@ const Course: React.FC = () => {
                   spaceBetween: 10,
                 },
                 640: {
-                  slidesPerView: 2,
+                  slidesPerView: 3,
                   spaceBetween: 15,
                 },
                 1024: {
@@ -488,7 +488,7 @@ const Course: React.FC = () => {
                 </SwiperSlide>
               ))}
             </Swiper>
-            {currentSubCourses.length > 4 && (
+            {currentSubCourses.length > 0 && (
               <button
                 className="custom-next-button group absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white w-10 h-10 max-sm:w-7 max-sm:h-7 rounded-full shadow-lg flex items-center justify-center hover:bg-primaryred hover:text-white transition-colors duration-300"
                 aria-label="Next slide"

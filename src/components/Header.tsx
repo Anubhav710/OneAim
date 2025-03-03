@@ -56,7 +56,7 @@ const Header = () => {
                   <FaPhoneAlt />
                 </div>
                 <div>
-                  <a href="tel: +91 8079064769">+91 8079064769</a>
+                  <a href="tel: +91-8955249714">+91-8955249714</a>
                 </div>
               </div>
               <div className="flex items-center gap-x-2">
@@ -273,7 +273,7 @@ const Header = () => {
                 <option value="english">English</option>
                 <option value="hindi">Hindi</option>
               </select>
-              <Button className="w-full !py-3 !px-8 hover:bg-primaryred">
+              <Button className="w-full !py-3 !px-8 hover:bg-primaryred !text-white">
                 Log in
               </Button>
             </div>
@@ -281,8 +281,8 @@ const Header = () => {
             <div className="pt-4">
               <div className="flex items-center gap-x-2 mb-3">
                 <FaPhoneAlt className="text-primaryred" />
-                <a href="tel: +91 8079064769" className="text-gray-700">
-                  +91 8079064769
+                <a href="tel: +91-8955249714" className="text-gray-700">
+                  +91-8955249714
                 </a>
               </div>
               <div className="flex items-center gap-x-2">

@@ -99,7 +99,9 @@ const Footer = () => {
                   <h4 className="text-lg font-semibold text-primaryred">
                     Phone Number
                   </h4>
-                  <p className="text-primaryred text-sm">+91 9865432899</p>
+                  <p className="text-primaryred text-sm">
+                    <a href="tel: +91-8955249714">+91-8955249714</a>{" "}
+                  </p>
                 </hgroup>
               </div>
               <div className="flex flex-col sm:flex-row items-center sm:items-start gap-y-2 gap-x-3">
@@ -111,7 +113,10 @@ const Footer = () => {
                     Email
                   </h4>
                   <p className="text-primaryred text-sm">
-                    info@theoneaim.co.in
+                    <a href="mailto:info@theoneaim.co.in">
+                      {" "}
+                      info@theoneaim.co.in
+                    </a>
                   </p>
                 </hgroup>
               </div>
