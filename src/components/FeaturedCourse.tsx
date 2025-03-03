@@ -24,7 +24,7 @@ const FeaturedCourse = () => {
       ref={sectionRef}
       className="bg-gradient-to-b from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE] padding-top relative"
     >
-      <div className="bg-gradient-to-t from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE] rounded-t-[12rem] max-md:rounded-t-[6rem] max-sm:rounded-t-[3rem] pt-[150px]">
+      <div className="bg-gradient-to-t from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE] rounded-t-[12rem] max-md:rounded-t-[6rem] max-sm:rounded-t-[3rem] max-sm:pt-[100px] py-[100px]">
         <div className="screen space-y-12 max-sm:space-y-8 padding-x">
           <div className="w-max mx-auto" ref={headingRef}>
             <CommonHeading title="Featured Courses" />

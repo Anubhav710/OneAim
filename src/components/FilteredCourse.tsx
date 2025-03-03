@@ -44,7 +44,7 @@ const FilteredCourse = () => {
     <div className="bg-gradient-to-b padding-top relative">
       {/* Responsive top curved SVG */}
 
-      <section className="bg-[#FFE4CD]  pt-[200px] pb-[300px] relative rounded-b-[12rem] max-sm:rounded-b-[2rem] rounded-t-[12rem] max-sm:rounded-t-[2rem]">
+      <section className="bg-[#FFE4CD]  max-sm:pt-[100px] py-[100px]   relative rounded-b-[12rem] max-sm:rounded-b-[2rem] rounded-t-[12rem] max-sm:rounded-t-[2rem]">
         <div className="absolute -top-20 w-full  left-0  bg-[#FFE6E3] md:px-20 max-sm:px-0 ">
           <svg
             style={{
