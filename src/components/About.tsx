@@ -134,7 +134,7 @@ const About = () => {
               </div>
             </div>
             <div ref={statsRef} className="relative h-20 md:h-auto">
-              <div className="absolute max-sm:-top-[22rem] -top-[26rem] shadow-front-colored right-[5%] h-20 w-20 md:h-28 md:w-28 border border-[#DA232A] bg-white flex flex-col items-center justify-center rounded-full shadow-md">
+              <div className="absolute max-sm:-top-[26rem] -top-[26rem] shadow-front-colored right-[5%] h-20 w-20 md:h-28 md:w-28 border border-[#DA232A] bg-white flex flex-col items-center justify-center rounded-full shadow-md">
                 <p className="text-[#DA232A]  font-bold text-xl md:text-2xl">
                   100K+
                 </p>

@@ -158,7 +158,10 @@ const Header = () => {
               </div>
             </li>
             <li className="group relative cursor-pointer">
-              <a href="/" className="group-hover:text-primaryred">
+              <a
+                href="#footer"
+                className="group-hover:text-primaryred relative z-50"
+              >
                 Contact us
               </a>{" "}
               <div className="hidden group-hover:block top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 h-16 w-16 group-hover:absolute duration-300 ease-in-out">
@@ -254,7 +257,10 @@ const Header = () => {
                   </a>
                 </li>
                 <li className="mobile-menu-item border-b pb-2">
-                  <a href="/" className="hover:text-primaryred block text-lg">
+                  <a
+                    href="#footer"
+                    className="hover:text-primaryred block text-lg relative z-50"
+                  >
                     Contact us
                   </a>
                 </li>
