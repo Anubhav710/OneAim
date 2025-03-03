@@ -96,7 +96,10 @@ const About = () => {
   }, []);
 
   return (
-    <section className="bg-gradient-to-b from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE] padding-top">
+    <section
+      id="about"
+      className="bg-gradient-to-b from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE] padding-top"
+    >
       <section className="relative padding-x " ref={containerRef}>
         {/* Container  */}
         <div className="screen flex flex-col md:flex-row items-center gap-8 md:gap-4">
@@ -128,9 +131,9 @@ const About = () => {
                 />
               </hgroup>
               <div className="mt-5 md:mt-7">
-                <Button className="text-sm md:text-base text-white">
+                {/* <Button className="text-sm md:text-base text-white">
                   Know More
-                </Button>
+                </Button> */}
               </div>
             </div>
             <div ref={statsRef} className="relative h-20 md:h-auto">
@@ -140,7 +143,7 @@ const About = () => {
                 </p>
                 <p className="text-xs md:text-sm">Users</p>
               </div>
-              <div className="absolute max-sm:left-40 left-52  max-sm:-top-[4rem] -top-[7rem] shadow-front-colored  h-20 w-20 md:h-28 md:w-28 border border-[#FF7B07] bg-white flex flex-col items-center justify-center rounded-full shadow-md">
+              <div className="absolute max-sm:left-40 left-60  max-sm:-top-[2rem] -top-[3rem] shadow-front-colored  h-20 w-20 md:h-28 md:w-28 border border-[#FF7B07] bg-white flex flex-col items-center justify-center rounded-full shadow-md">
                 <p className="text-[#FF7B07] font-bold text-xl md:text-2xl">
                   50K+
                 </p>

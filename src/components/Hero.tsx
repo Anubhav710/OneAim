@@ -259,7 +259,7 @@ const Hero = () => {
       </div>
       <div
         ref={heroRef}
-        className=" relative h-screen max-sm:h-auto min-h-screen screen"
+        className=" relative h-screen max-sm:h-[10vh] min-h-screen screen"
       >
         {/* Background decorative elements */}
         <div className="hero-bg-element absolute -top-20 -left-20 w-64 h-64 rounded-full bg-[#FFC107]/10 blur-3xl"></div>
@@ -307,13 +307,13 @@ const Hero = () => {
                 <div className="w-max">
                   <MagneticButton
                     backgroundColor="#333333"
-                    className="bg-primaryred text-white font-semibold"
+                    className="bg-primaryred  max-sm:!px-4 max-sm:!py-3 text-white font-semibold"
                   >
                     Explore Courses
                   </MagneticButton>
                 </div>
                 <div className="w-max">
-                  <Button className="bg-transparent !hover:text-primaryred ring-[1px] ring-black font-medium hover:ring-primaryred hover:bg-transparent hover:text-primaryred">
+                  <Button className="bg-transparent max-sm:!px-4 max-sm:!py-3 !hover:text-primaryred ring-[1px] ring-black font-medium hover:ring-primaryred hover:bg-transparent hover:text-primaryred">
                     Join Now
                   </Button>
                 </div>
@@ -358,7 +358,7 @@ const Hero = () => {
         </section>
 
         {/* Random Circle  */}
-        <div ref={circlesRef} className="circles-container">
+        {/* <div ref={circlesRef} className="circles-container">
           <div className="h-5 w-5 rounded-full bg-[#FFC107] absolute top-[10%] right-[50%] z-10 max-sm:top-[5%]"></div>
           <div className="h-3 w-3 rounded-full bg-[#DA232A] absolute top-[20%] right-[71%] z-10 max-sm:top-[18%]"></div>
           <div className="h-5 w-5 rounded-full bg-[#5D8AA8] absolute bottom-[20%] right-[67%] z-10 max-sm:bottom-[10%]"></div>
@@ -367,14 +367,17 @@ const Hero = () => {
           <div className="h-3 w-3 rounded-full bg-[#5D8AA8] absolute top-[40%] right-[15%] z-10 max-sm:top-[30%]"></div>
           <div className="h-4 w-4 rounded-full bg-[#FFC107] absolute top-[15%] right-[85%] z-10 max-md:hidden "></div>
           <div className="h-6 w-6 rounded-full bg-[#DA232A]/70 absolute bottom-[30%] right-[40%] z-10 max-md:hidden"></div>
-        </div>
+        </div> */}
 
         {/* Mobile scroll indicator */}
-        <div className="hidden max-sm:block absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+        <a
+          href="#about"
+          className="hidden max-sm:block absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce z-40"
+        >
           <div className="w-8 h-12 rounded-full border-2 border-primaryred flex items-center justify-center">
             <div className="w-1.5 h-3 bg-primaryred rounded-full animate-scroll-indicator"></div>
           </div>
-        </div>
+        </a>
       </div>
     </section>
   );

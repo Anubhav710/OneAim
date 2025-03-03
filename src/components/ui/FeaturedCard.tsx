@@ -23,13 +23,13 @@ const FeaturedCard: React.FC<FeaturedCardProps> = ({
   return (
     <div className="bg-white rounded-[2rem] max-sm:rounded-[1.5rem] p-5 sm:p-6 space-y-4 shadow-lg hover:shadow-xl transition-all duration-300 border-b-4 border-b-[rgba(239,68,68,0.1)] h-full flex flex-col">
       {/* Tags */}
-      <div className="flex flex-wrap gap-2 sm:gap-3">
+      <div className="flex justify-between max-md:justify-start flex-wrap gap-2 sm:gap-3">
         <div className="flex-shrink-0">
           <h6 className="text-xs py-1.5 sm:py-2 bg-gradient-to-tr from-[#FFE9E9] to-[#FFF5EC] text-[#FF7B07] px-3 sm:px-5 rounded-full font-semibold whitespace-nowrap">
             {duration}
           </h6>
         </div>
-        <div className=" w-max ml-auto">
+        <div className=" w-max">
           <h6 className="text-xs py-1.5 sm:py-2 bg-gradient-to-tr from-[#FFE9E9] to-[#FFF5EC] text-[#FF7B07] px-3 sm:px-5 rounded-full font-semibold truncate text-right">
             {instructor}
           </h6>
