@@ -143,7 +143,10 @@ const Footer = () => {
         <div className="w-full h-[1px] bg-primaryred my-7"></div>
         <div>
           <p className="text-primaryred mx-auto w-max text-sm md:text-base">
-            © 2024 Designed by UTXO.
+            © 2024 Designed by{" "}
+            <a href="https://utxotech.com/" target="_blank">
+              UTXO Tech.
+            </a>
           </p>
         </div>
       </div>
