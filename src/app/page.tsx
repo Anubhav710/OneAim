@@ -12,8 +12,6 @@ import Team from "@/components/Team";
 import Testimonials from "@/components/Testimonials";
 
 import WhyChooseUs from "@/components/WhyChooseUs";
-import Image from "next/image";
-import Swiper from "swiper";
 
 export default function Home() {
   return (
