@@ -51,6 +51,24 @@ const WhyChooseUs = () => {
         scale: 0.95,
       });
 
+      // Continuous floating animation for the top image
+      gsap.to(".floating-image", {
+        y: -15,
+        duration: 1.5,
+        repeat: -1,
+        yoyo: true,
+        ease: "power1.inOut",
+      });
+
+      // Subtle rotation animation for the main image
+      gsap.to(".main-image", {
+        rotate: 5,
+        duration: 8,
+        repeat: -1,
+        yoyo: true,
+        ease: "power1.inOut",
+      });
+
       // Animation timeline
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -58,8 +76,6 @@ const WhyChooseUs = () => {
           start: isMobile ? "top 80%" : "top center",
           end: isMobile ? "bottom 70%" : "bottom center",
           toggleActions: "play none none reverse",
-          // Uncomment to debug
-          // markers: true,
         },
         defaults: {
           ease: "power3.out",
@@ -88,22 +104,26 @@ const WhyChooseUs = () => {
           stagger: isMobile ? 0.15 : 0.2,
         });
 
-      // Add hover animations for the cards
+      // Enhanced hover animations for the cards
       if (!isMobile) {
         const cards = cardsRef.current.children;
         for (let i = 0; i < cards.length; i++) {
           cards[i].addEventListener("mouseenter", () => {
             gsap.to(cards[i], {
-              y: -10,
-              duration: 0.3,
-              boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
+              y: -15,
+              scale: 1.05,
+              duration: 0.4,
+              ease: "power2.out",
+              boxShadow: "0 15px 30px rgba(0,0,0,0.15)",
             });
           });
 
           cards[i].addEventListener("mouseleave", () => {
             gsap.to(cards[i], {
               y: 0,
-              duration: 0.3,
+              scale: 1,
+              duration: 0.4,
+              ease: "power2.out",
               boxShadow: "none",
             });
           });
@@ -116,16 +136,43 @@ const WhyChooseUs = () => {
 
   return (
     <section
-      className="bg-gradient-to-t from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE] padding-[100px]"
+      className="bg-gradient-to-t from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE]  overflow-hidden padding-tx"
       ref={containerRef}
     >
       <section className="screen">
         <div className="flex flex-col lg:flex-row gap-8 padding-x">
-          <div className="lg:flex-1 mx-auto lg:mx-0" ref={imageRef}>
-            <div>
-              <div className="w-full mx-auto max-sm:max-w-full">
+          <div className="lg:flex-1 mx-auto lg:mx-0 relative" ref={imageRef}>
+            <div className="relative w-full flex justify-center items-center">
+              <div className="h-[80%] w-[80%] absolute">
                 <Image
-                  src={"/images/choose-us/choose-us.png"}
+                  src={"/images/choose-us/why-choose-us-3.png"}
+                  alt="why-choose-us"
+                  width={740}
+                  height={240}
+                  className="w-full h-auto"
+                />
+              </div>
+              <div className="h-56 w-56 -top-20 absolute z-50 floating-image">
+                <Image
+                  src={"/images/choose-us/why-choose-us-4.png"}
+                  alt="why-choose-us"
+                  width={120}
+                  height={240}
+                  className="w-full h-full"
+                />
+              </div>
+              <div className="h-[80%] w-[80%]  mx-auto absolute z-40 main-image">
+                <Image
+                  src={"/images/choose-us/why-choose-us.png"}
+                  alt="why-choose-us"
+                  width={740}
+                  height={240}
+                  className="w-full h-auto"
+                />
+              </div>
+              <div className="h-[100%] w-[100%] relative">
+                <Image
+                  src={"/images/choose-us/why-choose-us-2.png"}
                   alt="why-choose-us"
                   width={740}
                   height={240}

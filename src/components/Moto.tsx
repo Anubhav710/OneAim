@@ -70,8 +70,8 @@ const Moto = () => {
   }, [isMobile]);
 
   return (
-    <div className="bg-[#FFF4EC] padding-top relative">
-      <section>
+    <section className="bg-[#FFF4EC] padding-top relative">
+      <div>
         <div className="flex flex-row max-sm:flex-col  gap-8 md:gap-x-5">
           {/* Left image */}
           <div
@@ -132,8 +132,8 @@ const Moto = () => {
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 

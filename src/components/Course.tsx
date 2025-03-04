@@ -383,8 +383,8 @@ const Course: React.FC = () => {
   const currentCourseContent = subCourseContent[activeSubCourse] || [];
 
   return (
-    <div className="bg-[#FFF5E7]">
-      <section className="screen padding-top  padding-x">
+    <section className="bg-[#FFF5E7] padding-tx">
+      <div className="screen">
         <div className="space-y-12">
           <CommonHeading title="Our Courses" />
 
@@ -570,7 +570,7 @@ const Course: React.FC = () => {
             </button>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Custom styling for pagination bullets */}
       <style jsx global>{`
@@ -594,7 +594,7 @@ const Course: React.FC = () => {
           height: auto;
         }
       `}</style>
-    </div>
+    </section>
   );
 };
 

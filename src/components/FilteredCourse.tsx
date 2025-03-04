@@ -41,10 +41,10 @@ const FilteredCourse = () => {
   const curveHeight = Math.min(120, dimensions.width * 0.08);
 
   return (
-    <div className="bg-gradient-to-b padding-top relative">
+    <div className="bg-gradient-to-b relative padding-top">
       {/* Responsive top curved SVG */}
 
-      <section className="bg-[#FFE4CD]  max-sm:pt-[100px] py-[100px]   relative rounded-b-[12rem] max-sm:rounded-b-[2rem] rounded-t-[12rem] max-sm:rounded-t-[2rem]">
+      <section className="bg-[#FFE4CD]  padding-x max-sm:pt-[70px] py-[100px]   relative rounded-b-[12rem] max-sm:rounded-b-[2rem] rounded-t-[12rem] max-sm:rounded-t-[2rem]">
         <div className="absolute -top-20 w-full  left-0  bg-[#FFE6E3] md:px-20 max-sm:px-0 ">
           <svg
             style={{
@@ -80,7 +80,7 @@ const FilteredCourse = () => {
             />
           </svg>
         </div>
-        <div className="screen space-y-12 padding-x">
+        <div className="screen space-y-12">
           <div className="w-max mx-auto">
             <CommonHeading title="Filtered Courses" />
           </div>

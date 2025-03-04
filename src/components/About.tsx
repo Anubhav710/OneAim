@@ -46,7 +46,7 @@ const About = () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top center",
+          start: "top 90%",
           end: "bottom center",
           toggleActions: "play none none reverse",
         },
@@ -98,9 +98,9 @@ const About = () => {
   return (
     <section
       id="about"
-      className="bg-gradient-to-b from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE] padding-top"
+      className="bg-gradient-to-b from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE] padding-tx"
     >
-      <section className="relative padding-x " ref={containerRef}>
+      <div className="relative" ref={containerRef}>
         {/* Container  */}
         <div className="screen flex flex-col md:flex-row items-center gap-8 md:gap-4">
           {/* Left Container  */}
@@ -172,7 +172,7 @@ const About = () => {
             />
           </div>
         </div>
-      </section>
+      </div>
     </section>
   );
 };

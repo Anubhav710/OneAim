@@ -60,15 +60,15 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <div
+    <section
       ref={sectionRef}
-      className="testimonial-gradient-bg bg-gradient-to-t from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE] padding-x relative overflow-hidden"
+      className="testimonial-gradient-bg bg-gradient-to-t from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE] relative overflow-hidden padding-tx"
     >
       {/* Decorative elements */}
       <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-[#c1151b]/5 blur-2xl"></div>
       <div className="absolute bottom-20 right-10 w-40 h-40 rounded-full bg-[#c1151b]/5 blur-2xl"></div>
 
-      <section className="screen padding-top space-y-12 relative z-10">
+      <section className="screen  space-y-12 relative z-10">
         <div className="w-max mx-auto">
           <CommonHeading title="Testimonials" />
         </div>
@@ -144,7 +144,7 @@ const Testimonials = () => {
           </button>
         </div>
       </section>
-    </div>
+    </section>
   );
 };
 

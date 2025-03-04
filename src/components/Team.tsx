@@ -54,7 +54,7 @@ const teamInfo = [
     name: "Munaza Nasti ",
     qualifications: {
       experience: "7 Years of Experience",
-      education: "B.sc Masters in gender studies ( gold medalist) B.ed",
+      education: "B.sc Masters in gender studies",
       subject: "Mathematics",
     },
     description:
@@ -131,8 +131,8 @@ const teamInfo = [
 
 const Team = () => {
   return (
-    <section className="bg-gradient-to-t from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE] padding-top">
-      <section className="screen space-y-12 padding-x">
+    <section className="bg-gradient-to-t from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE] padding-tx">
+      <section className="screen space-y-12">
         <div className="w-max mx-auto">
           <CommonHeading title="Meet Our Team" />
         </div>
@@ -176,7 +176,7 @@ const Team = () => {
                 spaceBetween: 15,
               },
               1300: {
-                slidesPerView: 3,
+                slidesPerView: 4,
                 spaceBetween: 20,
               },
             }}
