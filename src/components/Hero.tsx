@@ -248,23 +248,25 @@ const Hero = () => {
 
   return (
     <section className="bg-gradient-to-t from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE] padding-x relative">
-      <div className="absolute -bottom-[37px] right-0 left-0 h-32  max-sm:-bottom-12 w-full overflow-hidden">
-        <Image
-          src={"/images/bg/hero-style.png"}
-          alt=""
-          height={1200}
-          width={1200}
-          className="w-full"
-        />
-      </div>
-      <div ref={heroRef} className=" relative h-[110vh] min-h-screen screen">
+      <Image
+        src={"/images/hero/hero-style.png"}
+        alt=""
+        height={1200}
+        width={1200}
+        className="w-full  left-0 absolute bottom-0"
+      />
+
+      <div ref={heroRef} className=" relative padding-y screen">
         {/* Background decorative elements */}
         <div className="hero-bg-element absolute -top-20 -left-20 w-64 h-64 rounded-full bg-[#FFC107]/10 blur-3xl"></div>
         <div className="hero-bg-element absolute top-1/3 -right-20 w-80 h-80 rounded-full bg-[#DA232A]/10 blur-3xl"></div>
 
-        <section className="h-full max-sm:py-20 w-full  relative z-10 ">
-          <div className="grid grid-cols-2 max-sm:grid-cols-1 max-sm:grid-rows-auto max-sm:gap-8 items-center h-full">
-            <div className="w-full space-y-7 max-sm:space-y-5" ref={contentRef}>
+        <section className="h-full  w-full  relative z-10">
+          <div className="grid grid-cols-2 max-sm:grid-cols-1 max-sm:grid-rows-auto max-sm:gap-10 items-center h-full ">
+            <div
+              className="w-full space-y-7 max-sm:space-y-5 "
+              ref={contentRef}
+            >
               <div
                 ref={taglineRef}
                 className="flex flex-wrap items-center gap-x-3 text-xl max-sm:text-lg font-semibold uppercase"

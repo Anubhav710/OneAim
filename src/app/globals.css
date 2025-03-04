@@ -25,7 +25,7 @@
 /******************************************** Headings  ************************************************/
 
 .heroHeading {
-  font-size: clamp(1.8rem, 3.5vw, 6rem);
+  font-size: clamp(1.5rem, 3.5vw, 6rem);
   line-height: clamp(2.4rem, 4vw, 7.2rem); /* 1.2x the font size */
   font-weight: bold;
 }

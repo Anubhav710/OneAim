@@ -531,7 +531,7 @@ const Course: React.FC = () => {
                 },
               }}
               style={{
-                padding: "25px 10px",
+                padding: "25px 2px",
               }}
             >
               {currentCourseContent.length > 0 ? (
