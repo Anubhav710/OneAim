@@ -3,7 +3,7 @@ import React from "react";
 
 const BlogCard = () => {
   return (
-    <div className="space-y-3 transition-all duration-300 hover:translate-y-[-8px] hover:shadow-lg rounded-lg overflow-hidden cursor-pointer group p-8">
+    <div className="space-y-3 transition-all duration-300 hover:translate-y-[-8px] hover:shadow-[0px_10px_20px_rgba(0,0,0,0.25)] rounded-lg overflow-hidden cursor-pointer group p-8">
       <div className="overflow-hidden">
         <Image
           src={"/images/blog/blog.png"}
@@ -41,7 +41,7 @@ const BlogCard = () => {
               width={34}
               height={34}
             />
-          </span>{" "}
+          </span>
         </div>
       </div>
     </div>

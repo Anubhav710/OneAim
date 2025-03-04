@@ -14,13 +14,13 @@ const teamInfo = [
     id: 1,
     name: "Diksha kashyap",
     qualifications: {
-      experience: "5 Years of Experience",
-      education: "Masters in Political Science",
-      subject: "Science",
+      experience: "Fresher",
+      education: "MA Political Science, UGC NET",
+      subject: "Political Science",
     },
     description:
-      "Joined National Human Rights Commission as an intern and completed a group research project with first position.",
-    role: "Program Director", // Optional: Adds clarity to her position
+      "Enthusiastic, Aspiring to be a Professor, passionate educator, make complex information easy.",
+    role: "Faculty (Indian Polity)",
     image: "/images/team/Dikshakashyap.png",
   },
   {
@@ -28,25 +28,24 @@ const teamInfo = [
     name: "Ritika kaushal",
     qualifications: {
       experience: "4 Years of Experience",
-      education: "MBA",
-      subject: "Computer Science",
+      education:
+        "BA Programming with Data Analytics, MBA in Human Resource and Operations",
+      subject: "Economics",
     },
-    description:
-      "Mr. Johnson is a seasoned educator with a strong background in computer science. He has taught various programming languages and has a passion for mentoring students.",
-    role: "Computer Science Instructor", // Optional: Adds clarity to his position
+    description: "Make subjects engaging and relatable for students.",
+    role: "Faculty",
     image: "/images/team/Ritikakaushal.png",
   },
   {
     id: 3,
     name: "Aatiba Nasti",
     qualifications: {
-      experience: "4 Years of Experience",
-      education: "M.tech transportation engineering",
-      subject: "English",
+      experience: "5 Years as Lecturer",
+      education: "B.Tech Civil Engineering, M.Tech Transportation Engineering",
+      subject: "Mathematics, Physics, Chemistry, and Reasoning",
     },
-    description:
-      "Ms. Rodriguez is an accomplished English teacher with a focus on creative writing and literature. She has a talent for inspiring students to express themselves through words.",
-    role: "English Instructor", // Optional: Adds clarity to her position
+    description: "Educator, a passion for lifelong learning.",
+    role: "Faculty",
     image: "/images/team/AatibaNasti.png",
   },
   {
@@ -54,7 +53,7 @@ const teamInfo = [
     name: "Munaza Nasti ",
     qualifications: {
       experience: "7 Years of Experience",
-      education: "B.sc Masters in gender studies",
+      education: "B.Sc Masters in Gender Studies",
       subject: "Mathematics",
     },
     description:
@@ -64,15 +63,14 @@ const teamInfo = [
   },
   {
     id: 5,
-    name: "Saloni  Vaishnoi",
+    name: "Saloni Vaishnoi",
     qualifications: {
-      experience: "14 Years of Experience",
-      education: "M.A. (Physics), B.Ed.",
-      subject: "Physics",
+      experience: "15 Years",
+      education: "B.Tech, M.A., B.Ed., pursuing PhD",
+      subject: "Geography",
     },
-    description:
-      "Mrs. Zhang specializes in making physics practical and relatable. Her hands-on approach to teaching and real-world examples help students understand complex physics concepts easily.",
-    role: "Physics Specialist",
+    description: "Karate player, PLC programming, training in Doordarshan.",
+    role: "Faculty",
     image: "/images/team/SaloniVaishnoi.png",
   },
   {
@@ -92,39 +90,38 @@ const teamInfo = [
     id: 7,
     name: "Narendra Raj Singh",
     qualifications: {
-      experience: "16 Years of Experience",
-      education: "Ph.D. (Chemistry), M.Sc.",
-      subject: "Chemistry",
+      experience: "23 Years",
+      education: "M.S (AI & ML), M.B.A (IB), M.A (Business Economics)",
+      subject: "Geography, Indian Art & Architecture",
     },
-    description:
-      "Dr. Williams makes chemistry exciting through interactive experiments and real-world applications. Her research background brings cutting-edge knowledge to her teaching methods.",
-    role: "Chemistry Head",
+    description: "Corporate Training.",
+    role: "Faculty",
     image: "/images/team/NarendraRajSingh.png",
   },
   {
     id: 8,
     name: "Preeti Rathi",
     qualifications: {
-      experience: "8 Years of Experience",
-      education: "M.S ( AI & ML)",
-      subject: "Career Counseling",
+      experience: "6 Years",
+      education: "PhD pursuing, UGC NET, MA (Economics), BEd",
+      subject: "Economics, Medieval History",
     },
     description:
-      "Ms. Sharma guides students in making informed career choices. Her expertise in psychology and career counseling helps students align their interests with suitable career paths.",
-    role: "Career Counselor",
+      "Researcher, educator, training & consultancy, case study specialist.",
+    role: "Faculty",
     image: "/images/team/PreetiRathi.png",
   },
   {
     id: 9,
     name: "Payal kundu",
     qualifications: {
-      experience: "8 Years of Experience",
-      education: "M.A. (Psychology), B.Ed.",
-      subject: "Career Counseling",
+      experience: "11 Years as a Teacher",
+      education:
+        "B.A Honours in Sociology, M.A in Sociology & Psychology, PGD in Adult Education",
+      subject: "History",
     },
-    description:
-      "Ms. Sharma guides students in making informed career choices. Her expertise in psychology and career counseling helps students align their interests with suitable career paths.",
-    role: "Career Counselor",
+    description: "Educator.",
+    role: "Faculty",
     image: "/images/team/Payalkundu.png",
   },
 ];

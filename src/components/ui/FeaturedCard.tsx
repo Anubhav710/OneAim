@@ -1,5 +1,15 @@
+"use client";
+
 import Image from "next/image";
-import React from "react";
+import React, { ReactNode } from "react";
+import { BiBook, BiQuestionMark, BiUser, BiVideo } from "react-icons/bi";
+import { FaClipboardList } from "react-icons/fa6";
+
+// Define the type for a feature item
+interface Feature {
+  name: string;
+  icon: ReactNode;
+}
 
 interface FeaturedCardProps {
   title?: string;
@@ -8,7 +18,9 @@ interface FeaturedCardProps {
   instructor?: string;
   imageSrc?: string;
   buttonText?: string;
+  features?: Feature[];
   onClick?: () => void;
+  price?: number;
 }
 
 const FeaturedCard: React.FC<FeaturedCardProps> = ({
@@ -18,29 +30,45 @@ const FeaturedCard: React.FC<FeaturedCardProps> = ({
   instructor = "Dr. Rajesh Sharma",
   imageSrc = "/images/course/feature-course.png",
   buttonText = "Play now",
+  price = 100,
   onClick,
+  features = [
+    { name: "2000 Video Lectures", icon: <BiVideo /> },
+    { name: "Subjective Test Series", icon: <FaClipboardList /> },
+    { name: "Previous Years Question Papers", icon: <BiBook /> },
+    { name: "100000 Questions", icon: <BiQuestionMark /> },
+    { name: "Virtual mentorship", icon: <BiUser /> },
+  ],
 }) => {
   return (
-    <div className="bg-white rounded-[2rem] max-sm:rounded-[1.5rem] p-5 sm:p-6 space-y-4 shadow-lg hover:shadow-xl transition-all duration-300 border-b-4 border-b-[rgba(239,68,68,0.1)] h-full flex flex-col">
+    <div className="bg-white rounded-[2rem] max-sm:rounded-[1.5rem] p-5 sm:p-6 space-y-4 shadow-lg hover:shadow-xl transition-all duration-300 border-b-4 border-b-[rgba(239,68,68,0.1)] h-full flex flex-col min-h-[700px]">
       {/* Tags */}
       <div className="flex justify-between max-md:justify-start flex-wrap gap-2 sm:gap-3">
-        <div className="flex-shrink-0">
-          <h6 className="text-xs max-sm:text-[0.65rem] py-1.5 sm:py-2 bg-gradient-to-tr from-[#FFE9E9] to-[#FFF5EC] text-[#FF7B07] px-3 sm:px-5 rounded-full font-semibold whitespace-nowrap">
-            {duration}
-          </h6>
-        </div>
-        <div className=" w-max">
-          <h6 className="text-xs max-sm:text-[0.65rem] py-1.5 sm:py-2 bg-gradient-to-tr from-[#FFE9E9] to-[#FFF5EC] text-[#FF7B07] px-3 sm:px-5 rounded-full font-semibold truncate text-right">
-            {instructor}
-          </h6>
-        </div>
+        {duration && (
+          <div className="flex-shrink-0">
+            <h6 className="text-xs max-sm:text-[0.65rem] py-1.5 sm:py-2 bg-gradient-to-tr from-[#FFE9E9] to-[#FFF5EC] text-[#FF7B07] px-3 sm:px-5 rounded-full font-semibold whitespace-nowrap">
+              {duration}
+            </h6>
+          </div>
+        )}
+        {instructor && (
+          <div className=" w-max">
+            <h6 className="text-xs max-sm:text-[0.65rem] py-1.5 sm:py-2 bg-gradient-to-tr from-[#FFE9E9] to-[#FFF5EC] text-[#FF7B07] px-3 sm:px-5 rounded-full font-semibold truncate text-right">
+              {instructor}
+            </h6>
+          </div>
+        )}
       </div>
 
       {/* Image */}
       <div className="relative overflow-hidden rounded-2xl group">
+        {/* Princing Tag  */}
+        <div className="absolute top-3 right-[1px] bg-primaryred z-30 text-white text-sm py-1 px-5 rounded-l-full font-semibold">
+          ₹ {price || "price"}
+        </div>
         <div className="aspect-video relative">
           <Image
-            src={imageSrc}
+            src={imageSrc || "/images/placeholder.png"}
             alt={title}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
@@ -52,7 +80,7 @@ const FeaturedCard: React.FC<FeaturedCardProps> = ({
       </div>
 
       {/* Information */}
-      <div className="space-y-4 pl-1 flex-grow flex flex-col">
+      <div className="space-y-4 pl-1 flex flex-col">
         <hgroup className="space-y-3 flex-grow">
           <h2 className="text-xl sm:text-2xl font-semibold line-clamp-2">
             {title}
@@ -62,6 +90,17 @@ const FeaturedCard: React.FC<FeaturedCardProps> = ({
           </p>
         </hgroup>
 
+        {/* Features List */}
+        <ul className="space-y-2 ">
+          {features.map((item, index) => (
+            <li key={index} className="flex gap-2 items-center">
+              <span className="text-lg text-primary">{item.icon}</span>
+              <span className="text-sm sm:text-base">{item.name}</span>
+            </li>
+          ))}
+        </ul>
+
+        {/* Button */}
         <div className="mt-auto pt-2">
           <button
             onClick={onClick}

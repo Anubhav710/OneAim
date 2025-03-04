@@ -104,7 +104,7 @@ const About = () => {
         {/* Container  */}
         <div className="screen flex flex-col md:flex-row items-center gap-8 md:gap-4">
           {/* Left Container  */}
-          <div className="w-full md:flex-1 mb-10 md:mb-0" ref={imageRef}>
+          <div className="flex-1" ref={imageRef}>
             <div className="relative h-full w-full md:w-[90%] mx-auto">
               <Image
                 src={"/images/about/about-image.png"}
@@ -123,17 +123,17 @@ const About = () => {
           </div>
           {/* Right Container  */}
           <div className="w-full md:flex-1 relative">
-            <div ref={contentRef} className="mb-12 md:mb-16">
-              <hgroup className="common-space-y">
+            <div ref={contentRef}>
+              <hgroup>
                 <CommonHeading
                   title="Who we are"
                   desc="Welcome to One Aim Academy, where your success is our mission. Our expert instructors and comprehensive courses are designed to help you reach your academic and professional goals."
                 />
               </hgroup>
               <div className="mt-5 md:mt-7">
-                {/* <Button className="text-sm md:text-base text-white">
+                <Button className="text-sm md:text-base text-white">
                   Know More
-                </Button> */}
+                </Button>
               </div>
             </div>
             <div ref={statsRef} className="relative h-20 md:h-auto">

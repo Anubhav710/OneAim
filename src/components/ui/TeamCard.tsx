@@ -74,15 +74,17 @@ const TeamCard = ({
               {qualificationIcons.map((item) => (
                 <div key={item.id} className="flex items-center gap-x-2">
                   {/* Image Container  */}
-                  <div className="bg-white/90 h-7 w-7 sm:h-8 sm:w-8 md:h-9 md:w-9 rounded-full flex items-center justify-center shadow-sm">
-                    <div className="h-[70%] w-[70%]">
-                      <Image
-                        src={item.icon}
-                        alt={item.alt}
-                        width={32}
-                        height={32}
-                        className="w-full h-full bg-cover"
-                      />
+                  <div>
+                    <div className="bg-white/90 h-7 w-7 sm:h-8 sm:w-8 md:h-9 md:w-9 rounded-full flex items-center justify-center shadow-sm">
+                      <div className="h-[70%] w-[70%]">
+                        <Image
+                          src={item.icon}
+                          alt={item.alt}
+                          width={32}
+                          height={32}
+                          className="w-full h-full bg-cover"
+                        />
+                      </div>
                     </div>
                   </div>
                   <p className="text-white text-xs sm:text-sm font-medium">
