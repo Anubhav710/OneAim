@@ -47,7 +47,7 @@ const Header = () => {
 
   return (
     <header className="relative z-50">
-      <div className="header-top text-white bg-primaryred py-4">
+      <div className="header-top text-white bg-primaryred py-2">
         <div className="bg-primaryred flex justify-between items-center screen padding-x">
           <div className="hidden md:block">
             <div className="flex gap-x-10">
