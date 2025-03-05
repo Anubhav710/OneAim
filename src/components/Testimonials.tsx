@@ -62,7 +62,7 @@ const Testimonials = () => {
   return (
     <section
       ref={sectionRef}
-      className="testimonial-gradient-bg bg-gradient-to-t from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE] relative overflow-hidden padding-tx"
+      className="testimonial-gradient-bg bg-gradient-to-t from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE] relative overflow-hidden padding-yx"
     >
       {/* Decorative elements */}
       <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-[#c1151b]/5 blur-2xl"></div>

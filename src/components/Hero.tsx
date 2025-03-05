@@ -80,13 +80,23 @@ const Hero = () => {
                     className="w-[80%] h-[80%] max-sm:w-[70%] max-sm:h-[70%]"
                   />
                 </div>
-                <div className="h-[90%] w-[90%] mx-auto relative z-30 max-sm:h-auto max-sm:flex max-sm:justify-center max-sm:items-center">
+                <div className="h-[90%] w-[90%] mx-auto relative z-30 max-sm:h-auto max-sm:hidden max-sm:justify-center max-sm:items-center">
                   <Image
                     src={"/images/hero/hero-image.png"}
                     width={540}
                     height={240}
                     alt="hero-image"
                     className="w-full h-full max-sm:w-4/5 max-sm:h-auto max-sm:object-contain"
+                    priority
+                  />
+                </div>
+                <div className="h-full w-full relative z-30  hidden max-sm:block">
+                  <Image
+                    src={"/images/hero/hero-mobile-img.png"}
+                    width={1240}
+                    height={240}
+                    alt="hero-image"
+                    className="w-full h-full object-cover"
                     priority
                   />
                 </div>

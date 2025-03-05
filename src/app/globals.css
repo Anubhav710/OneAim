@@ -57,11 +57,14 @@
 }
 
 .padding-top {
-  @apply pt-[100px] sm:pt-[120px] md:pt-[150px] lg:pt-[180px] xl:pt-[200px];
+  @apply pt-[70px] sm:pt-[110px] md:pt-[110px] lg:pt-[110px] xl:pt-[110px];
 }
 
 .padding-tx {
   @apply pt-[100px] sm:pt-[120px] md:pt-[150px] lg:pt-[180px] xl:pt-[200px] px-4 sm:px-5 md:px-6 lg:px-8;
+}
+.padding-yx {
+  @apply py-[50px] sm:py-[110px] md:py-[110px] lg:py-[110px] xl:py-[110px] px-4 sm:px-5 md:px-6 lg:px-8;
 }
 
 /******************************************** Swiper JS Start  ************************************************/

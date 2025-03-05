@@ -4,8 +4,8 @@ import BlogCard from "./ui/BlogCard";
 
 const Blog = () => {
   return (
-    <section className="bg-gradient-to-b from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE] padding-tx">
-      <div className="screen padding-y space-y-12 pb-[100px]">
+    <section className="bg-gradient-to-b from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE] padding-yx">
+      <div className="screen padding-y space-y-12">
         <div className="mx-auto w-max">
           <CommonHeading title="Latest Updates" />
         </div>

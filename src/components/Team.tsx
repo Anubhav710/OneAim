@@ -128,7 +128,7 @@ const teamInfo = [
 
 const Team = () => {
   return (
-    <section className="bg-gradient-to-t from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE] padding-tx">
+    <section className="bg-gradient-to-t from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE] padding-yx">
       <section className="screen space-y-12">
         <div className="w-max mx-auto">
           <CommonHeading title="Meet Our Team" />

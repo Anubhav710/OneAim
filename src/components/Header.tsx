@@ -71,16 +71,16 @@ const Header = () => {
           </div>
           <div className="mx-auto md:mx-0">
             <ul className="flex gap-x-4">
-              <li className="bg-white rounded-full h-5 w-5 md:h-10 md:w-10 flex-center group hover:bg-primaryred hover:ring-[1.5px] hover:ring-white duration-300 ease-in-out cursor-pointer">
+              <li className="bg-white rounded-full h-7 w-7 md:h-9 md:w-9 flex-center group hover:bg-primaryred hover:ring-[1.5px] hover:ring-white duration-300 ease-in-out cursor-pointer">
                 <FaWhatsapp className="h-4 w-4 md:h-6 md:w-6 text-primaryred group-hover:text-white duration-300 ease-in-out" />
               </li>
-              <li className="bg-white rounded-full h-5 w-5 md:h-10 md:w-10 flex-center group hover:bg-primaryred hover:ring-[1.5px] hover:ring-white duration-300 ease-in-out cursor-pointer">
+              <li className="bg-white rounded-full h-7 w-7 md:h-9 md:w-9 flex-center group hover:bg-primaryred hover:ring-[1.5px] hover:ring-white duration-300 ease-in-out cursor-pointer">
                 <FaInstagram className="h-4 w-4 md:h-6 md:w-6 text-primaryred group-hover:text-white duration-300 ease-in-out" />
               </li>
-              <li className="bg-white rounded-full h-5 w-5 md:h-10 md:w-10 flex-center group hover:bg-primaryred hover:ring-[1.5px] hover:ring-white duration-300 ease-in-out cursor-pointer">
+              <li className="bg-white rounded-full h-7 w-7 md:h-9 md:w-9 flex-center group hover:bg-primaryred hover:ring-[1.5px] hover:ring-white duration-300 ease-in-out cursor-pointer">
                 <TiSocialLinkedin className="h-4 w-4 md:h-6 md:w-6 text-primaryred group-hover:text-white duration-300 ease-in-out" />
               </li>
-              <li className="bg-white rounded-full h-5 w-5 md:h-10 md:w-10 flex-center group hover:bg-primaryred hover:ring-[1.5px] hover:ring-white duration-300 ease-in-out cursor-pointer">
+              <li className="bg-white rounded-full h-7 w-7 md:h-9 md:w-10 flex-center group hover:bg-primaryred hover:ring-[1.5px] hover:ring-white duration-300 ease-in-out cursor-pointer">
                 <FaYoutube className="h-4 w-4 md:h-6 md:w-6 text-primaryred group-hover:text-white duration-300 ease-in-out" />
               </li>
             </ul>
@@ -95,7 +95,7 @@ const Header = () => {
             alt="logo"
             width={240}
             height={50}
-            className="w-[120px] md:w-[160px] lg:w-[220px]"
+            className="w-[170px] md:w-[160px] lg:w-[220px]"
           />
         </a>
         {/* Desktop navigation  */}

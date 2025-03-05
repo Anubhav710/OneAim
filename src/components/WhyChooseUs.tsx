@@ -136,7 +136,7 @@ const WhyChooseUs = () => {
 
   return (
     <section
-      className="bg-gradient-to-t from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE]  overflow-hidden padding-tx"
+      className="bg-gradient-to-t from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE]  overflow-hidden padding-yx"
       ref={containerRef}
     >
       <section className="screen">

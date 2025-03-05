@@ -29,7 +29,7 @@ const FeaturedCard: React.FC<FeaturedCardProps> = ({
   duration = "12 Months",
   instructor = "Dr. Rajesh Sharma",
   imageSrc = "/images/course/feature-course.png",
-  buttonText = "Play now",
+  buttonText = "Pay now",
   price = 100,
   onClick,
   features = [
