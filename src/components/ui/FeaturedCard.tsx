@@ -41,7 +41,7 @@ const FeaturedCard: React.FC<FeaturedCardProps> = ({
   ],
 }) => {
   return (
-    <div className="bg-white rounded-[2rem] max-sm:rounded-[1.5rem] p-5 sm:p-6 space-y-4 shadow-lg hover:shadow-xl transition-all duration-300 border-b-4 border-b-[rgba(239,68,68,0.1)] h-full flex flex-col min-h-[700px]">
+    <div className="bg-white rounded-[2rem] max-sm:rounded-[1.5rem] p-5 sm:p-6 space-y-4 shadow-lg hover:shadow-xl transition-all duration-300 border-b-4 border-b-[rgba(239,68,68,0.1)] h-full flex flex-col min-h-[700px] max-sm:min-h-[550px]">
       {/* Tags */}
       <div className="flex justify-between max-md:justify-start flex-wrap gap-2 sm:gap-3">
         {duration && (
