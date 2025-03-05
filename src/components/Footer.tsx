@@ -13,10 +13,7 @@ import { IoChevronDown } from "react-icons/io5";
 
 const Footer = () => {
   return (
-    <footer
-      id="footer"
-      className="text-gray-800 bg-[#FFEDDD] pt-20 md:pt-40 pb-10 max-sm:pt-20"
-    >
+    <footer id="footer" className="text-gray-800 bg-[#FFEDDD]  md:pt-20 pb-10">
       <div className="screen mx-auto padding-x">
         {/* Company Info  */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-x-10">

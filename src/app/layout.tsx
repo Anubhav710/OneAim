@@ -32,7 +32,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${poppins.variable} scroll-smooth`}>
       <body className={`font-poppins antialiased`} suppressHydrationWarning>
-        <Header />
         {children}
       </body>
     </html>

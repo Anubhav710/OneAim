@@ -46,7 +46,7 @@ const Header = () => {
   }, [isMenuOpen]);
 
   return (
-    <header className="relative z-50">
+    <header className="z-50 sticky top-0">
       <div className="header-top text-white bg-primaryred py-2">
         <div className="bg-primaryred flex justify-between items-center screen padding-x">
           <div className="hidden md:block">
@@ -87,128 +87,129 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div className="screen py-4 flex items-center justify-between padding-x">
-        {/* Logo  */}
-        <a href="/" className="cursor-pointer">
-          <Image
-            src={"/images/logo.svg"}
-            alt="logo"
-            width={240}
-            height={50}
-            className="w-[170px] md:w-[160px] lg:w-[220px]"
-          />
-        </a>
-        {/* Desktop navigation  */}
-        <nav className="hidden lg:block">
-          <ul className="flex gap-x-10">
-            <li className="group relative cursor-pointer">
-              <a href="/" className="text-primaryred">
-                Home
-              </a>{" "}
-              <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 h-16 w-16">
-                <Image
-                  src={"/images/icons/button-style.svg"}
-                  alt="style-1"
-                  width={120}
-                  height={120}
-                  className="h-full w-full"
-                />
-              </div>
-            </li>
-            <li className="group relative cursor-pointer">
-              <a href="/" className="group-hover:text-primaryred">
-                About Us
-              </a>{" "}
-              <div className="hidden group-hover:block top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 h-16 w-16 group-hover:absolute duration-300 ease-in-out">
-                <Image
-                  src={"/images/icons/button-style.svg"}
-                  alt="style-1"
-                  width={120}
-                  height={120}
-                  className="h-full w-full"
-                />
-              </div>
-            </li>
-            <li className="group relative cursor-pointer">
-              <a href="/" className="group-hover:text-primaryred">
-                Courses
-              </a>{" "}
-              <div className="hidden group-hover:block top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 h-16 w-16 group-hover:absolute duration-300 ease-in-out">
-                <Image
-                  src={"/images/icons/button-style.svg"}
-                  alt="style-1"
-                  width={120}
-                  height={120}
-                  className="h-full w-full"
-                />
-              </div>
-            </li>
-            <li className="group relative cursor-pointer">
-              <a href="/" className="group-hover:text-primaryred">
-                Test Series
-              </a>{" "}
-              <div className="hidden group-hover:block top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 h-16 w-16 group-hover:absolute duration-300 ease-in-out">
-                <Image
-                  src={"/images/icons/button-style.svg"}
-                  alt="style-1"
-                  width={120}
-                  height={120}
-                  className="h-full w-full"
-                />
-              </div>
-            </li>
-            <li className="group relative cursor-pointer">
-              <a
-                href="#footer"
-                className="group-hover:text-primaryred relative z-50"
-              >
-                Contact us
-              </a>{" "}
-              <div className="hidden group-hover:block top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 h-16 w-16 group-hover:absolute duration-300 ease-in-out">
-                <Image
-                  src={"/images/icons/button-style.svg"}
-                  alt="style-1"
-                  width={120}
-                  height={120}
-                  className="h-full w-full"
-                />
-              </div>
-            </li>
-          </ul>
-        </nav>
-        {/* Buttons  */}
-        <div className="hidden md:flex space-x-5">
-          <select
-            name=""
-            id=""
-            className="border rounded-md p-2 bg-white text-primaryred focus:outline-none focus:ring-2 focus:ring-primaryred"
-          >
-            <option value="" className="text-gray-500">
-              Select Language
-            </option>
-            <option value="english">English</option>
-            <option value="hindi">Hindi</option>
-          </select>
-          <Button className="!py-3 !px-8 hover:bg-primaryred !text-white">
-            Log in
-          </Button>
-        </div>
+      <div className="desktop-heading bg-white">
+        <div className="screen py-4 flex items-center justify-between padding-x">
+          {/* Logo  */}
+          <a href="/" className="cursor-pointer">
+            <Image
+              src={"/images/logo.svg"}
+              alt="logo"
+              width={240}
+              height={50}
+              className="w-[170px] md:w-[160px] lg:w-[220px]"
+            />
+          </a>
+          {/* Desktop navigation  */}
+          <nav className="hidden lg:block">
+            <ul className="flex gap-x-10">
+              <li className="group relative cursor-pointer">
+                <a href="/" className="text-primaryred">
+                  Home
+                </a>{" "}
+                <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 h-16 w-16">
+                  <Image
+                    src={"/images/icons/button-style.svg"}
+                    alt="style-1"
+                    width={120}
+                    height={120}
+                    className="h-full w-full"
+                  />
+                </div>
+              </li>
+              <li className="group relative cursor-pointer">
+                <a href="/" className="group-hover:text-primaryred">
+                  About Us
+                </a>{" "}
+                <div className="hidden group-hover:block top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 h-16 w-16 group-hover:absolute duration-300 ease-in-out">
+                  <Image
+                    src={"/images/icons/button-style.svg"}
+                    alt="style-1"
+                    width={120}
+                    height={120}
+                    className="h-full w-full"
+                  />
+                </div>
+              </li>
+              <li className="group relative cursor-pointer">
+                <a href="/" className="group-hover:text-primaryred">
+                  Courses
+                </a>{" "}
+                <div className="hidden group-hover:block top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 h-16 w-16 group-hover:absolute duration-300 ease-in-out">
+                  <Image
+                    src={"/images/icons/button-style.svg"}
+                    alt="style-1"
+                    width={120}
+                    height={120}
+                    className="h-full w-full"
+                  />
+                </div>
+              </li>
+              <li className="group relative cursor-pointer">
+                <a href="/" className="group-hover:text-primaryred">
+                  Test Series
+                </a>{" "}
+                <div className="hidden group-hover:block top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 h-16 w-16 group-hover:absolute duration-300 ease-in-out">
+                  <Image
+                    src={"/images/icons/button-style.svg"}
+                    alt="style-1"
+                    width={120}
+                    height={120}
+                    className="h-full w-full"
+                  />
+                </div>
+              </li>
+              <li className="group relative cursor-pointer">
+                <a
+                  href="#footer"
+                  className="group-hover:text-primaryred relative z-50"
+                >
+                  Contact us
+                </a>{" "}
+                <div className="hidden group-hover:block top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 h-16 w-16 group-hover:absolute duration-300 ease-in-out">
+                  <Image
+                    src={"/images/icons/button-style.svg"}
+                    alt="style-1"
+                    width={120}
+                    height={120}
+                    className="h-full w-full"
+                  />
+                </div>
+              </li>
+            </ul>
+          </nav>
+          {/* Buttons  */}
+          <div className="hidden md:flex space-x-5">
+            <select
+              name=""
+              id=""
+              className="border rounded-md p-2 bg-white text-primaryred focus:outline-none focus:ring-2 focus:ring-primaryred"
+            >
+              <option value="" className="text-gray-500">
+                Select Language
+              </option>
+              <option value="english">English</option>
+              <option value="hindi">Hindi</option>
+            </select>
+            <Button className="!py-3 !px-8 hover:bg-primaryred !text-white">
+              Log in
+            </Button>
+          </div>
 
-        {/* Mobile menu button */}
-        <div className="lg:hidden">
-          <button
-            onClick={toggleMenu}
-            className="text-primaryred p-2 focus:outline-none"
-          >
-            {isMenuOpen ? (
-              <IoMdClose className="h-8 w-8" />
-            ) : (
-              <RiMenu3Line className="h-8 w-8" />
-            )}
-          </button>
+          {/* Mobile menu button */}
+          <div className="lg:hidden">
+            <button
+              onClick={toggleMenu}
+              className="text-primaryred p-2 focus:outline-none"
+            >
+              {isMenuOpen ? (
+                <IoMdClose className="h-8 w-8" />
+              ) : (
+                <RiMenu3Line className="h-8 w-8" />
+              )}
+            </button>
+          </div>
         </div>
       </div>
-
       {/* Mobile menu */}
       {isMenuOpen && (
         <div
