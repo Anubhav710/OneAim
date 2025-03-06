@@ -20,7 +20,7 @@ interface FeaturedCardProps {
   buttonText?: string;
   features?: Feature[];
   onClick?: () => void;
-  price?: number;
+  price?: string;
 }
 
 const FeaturedCard: React.FC<FeaturedCardProps> = ({
@@ -30,7 +30,7 @@ const FeaturedCard: React.FC<FeaturedCardProps> = ({
   instructor = "Dr. Rajesh Sharma",
   imageSrc = "/images/course/feature-course.png",
   buttonText = "Pay now",
-  price = 100,
+  price = "₹ 100",
   onClick,
   features = [
     { name: "2000 Video Lectures", icon: <BiVideo /> },
@@ -41,7 +41,7 @@ const FeaturedCard: React.FC<FeaturedCardProps> = ({
   ],
 }) => {
   return (
-    <div className="bg-white rounded-[2rem] max-sm:rounded-[1.5rem] p-5 sm:p-6 space-y-4 shadow-lg hover:shadow-xl transition-all duration-300 border-b-4 border-b-[rgba(239,68,68,0.1)] h-full flex flex-col min-h-[700px] max-sm:min-h-[550px]">
+    <div className="h-full bg-white rounded-[2rem] max-sm:rounded-[1.5rem] p-5 sm:p-6 space-y-4 shadow-lg hover:shadow-xl transition-all duration-300 border-b-4 border-b-[rgba(239,68,68,0.1)]  flex flex-col  ">
       {/* Tags */}
       <div className="flex justify-between max-md:justify-start flex-wrap gap-2 sm:gap-3">
         {duration && (
@@ -64,7 +64,7 @@ const FeaturedCard: React.FC<FeaturedCardProps> = ({
       <div className="relative overflow-hidden rounded-2xl group">
         {/* Princing Tag  */}
         <div className="absolute top-3 right-[1px] bg-primaryred z-30 text-white text-sm py-1 px-5 rounded-l-full font-semibold">
-          ₹ {price || "price"}
+          {price || "price"}
         </div>
         <div className="aspect-video relative">
           <Image

@@ -383,7 +383,7 @@ const Course: React.FC = () => {
   const currentCourseContent = subCourseContent[activeSubCourse] || [];
 
   return (
-    <section className="bg-[#FFF5E7] padding-yx">
+    <section id="course" className="bg-[#FFF4D5]/40 padding-yx">
       <div className="screen">
         <div className="space-y-12">
           <CommonHeading title="Our Courses" />
@@ -521,17 +521,37 @@ const Course: React.FC = () => {
                 bulletActiveClass: "swiper-pagination-bullet-active",
               }}
               breakpoints={{
-                640: {
+                320: {
                   slidesPerView: 1,
+                  spaceBetween: 2,
+                },
+                480: {
+                  slidesPerView: 2,
+                  spaceBetween: 10,
+                },
+                640: {
+                  slidesPerView: 2,
+                  spaceBetween: 10,
+                },
+                768: {
+                  slidesPerView: 2,
+                  spaceBetween: 10,
+                },
+                991: {
+                  slidesPerView: 3,
                   spaceBetween: 20,
                 },
                 1024: {
                   slidesPerView: 3,
                   spaceBetween: 20,
                 },
+                1200: {
+                  slidesPerView: 3,
+                  spaceBetween: 20,
+                },
               }}
               style={{
-                padding: "25px 2px",
+                padding: "0px 10px 50px 10px",
               }}
             >
               {currentCourseContent.length > 0 ? (

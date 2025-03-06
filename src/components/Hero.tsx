@@ -7,7 +7,10 @@ import Button from "./ui/Button";
 
 const Hero = () => {
   return (
-    <section className="bg-gradient-to-t from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE] padding-x relative">
+    <section
+      id="home"
+      className="bg-gradient-to-t from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE] padding-x relative"
+    >
       <div className="max-sm:h-[42px] w-full absolute bottom-0 left-0">
         <Image
           src={"/images/hero/hero-style.png"}
@@ -87,16 +90,6 @@ const Hero = () => {
                     height={240}
                     alt="hero-image"
                     className="w-full h-full max-sm:w-4/5 max-sm:h-auto max-sm:object-contain"
-                    priority
-                  />
-                </div>
-                <div className="h-full w-full relative z-30  hidden max-sm:block">
-                  <Image
-                    src={"/images/hero/hero-mobile-img.png"}
-                    width={1240}
-                    height={240}
-                    alt="hero-image"
-                    className="w-full h-full object-cover"
                     priority
                   />
                 </div>

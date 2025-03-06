@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
-import { FaPhoneAlt } from "react-icons/fa";
+import { FaFacebook, FaPhoneAlt, FaQuora } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import { FaWhatsapp } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
@@ -11,13 +11,59 @@ import { IoMdClose } from "react-icons/io";
 import Image from "next/image";
 import Button from "./ui/Button";
 import gsap from "gsap";
+import { FaFacebookF } from "react-icons/fa6";
+import { FaXTwitter } from "react-icons/fa6";
+import CustomDropdown from "./ui/CustomDropdown";
+
+const socialLinks = [
+  {
+    href: "https://www.facebook.com/oneaimeducation/",
+    icon: (
+      <FaFacebookF className="h-4 w-4 md:h-6 md:w-6 text-primaryred group-hover:text-white duration-300 ease-in-out" />
+    ),
+  },
+  {
+    href: "https://www.instagram.com/oneaim__official/",
+    icon: (
+      <FaInstagram className="h-4 w-4 md:h-6 md:w-6 text-primaryred group-hover:text-white duration-300 ease-in-out" />
+    ),
+  },
+  {
+    href: "https://x.com/OneAim01",
+    icon: (
+      <FaXTwitter className="h-4 w-4 md:h-6 md:w-6 text-primaryred group-hover:text-white duration-300 ease-in-out" />
+    ),
+  },
+  {
+    href: "https://www.quora.com/profile/One-Aim-5",
+    icon: (
+      <FaQuora className="h-4 w-4 md:h-6 md:w-6 text-primaryred group-hover:text-white duration-300 ease-in-out" />
+    ),
+  },
+  {
+    href: "https://www.youtube.com/@OneAim-q7r",
+    icon: (
+      <FaYoutube className="h-4 w-4 md:h-6 md:w-6 text-primaryred group-hover:text-white duration-300 ease-in-out" />
+    ),
+  },
+];
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [headerVisible, setHeaderVisible] = useState(true);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleScroll = () => {
+    if (typeof window !== "undefined") {
+      const scrollY = window.scrollY;
+      setHeaderVisible(scrollY < lastScrollY || scrollY < 100);
+      setLastScrollY(scrollY);
+    }
   };
 
   useEffect(() => {
@@ -45,9 +91,20 @@ const Header = () => {
     }
   }, [isMenuOpen]);
 
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
+
   return (
-    <header className="z-50 sticky top-0">
-      <div className="header-top text-white bg-primaryred py-2">
+    <header
+      className={`z-50 sticky top-0 transition-transform duration-500 shadow-front ${
+        headerVisible ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
+      <div className="header-top text-white bg-primaryred py-[11px]">
         <div className="bg-primaryred flex justify-between items-center screen padding-x">
           <div className="hidden md:block">
             <div className="flex gap-x-10">
@@ -69,20 +126,17 @@ const Header = () => {
               </div>
             </div>
           </div>
+
           <div className="mx-auto md:mx-0">
             <ul className="flex gap-x-4">
-              <li className="bg-white rounded-full h-7 w-7 md:h-9 md:w-9 flex-center group hover:bg-primaryred hover:ring-[1.5px] hover:ring-white duration-300 ease-in-out cursor-pointer">
-                <FaWhatsapp className="h-4 w-4 md:h-6 md:w-6 text-primaryred group-hover:text-white duration-300 ease-in-out" />
-              </li>
-              <li className="bg-white rounded-full h-7 w-7 md:h-9 md:w-9 flex-center group hover:bg-primaryred hover:ring-[1.5px] hover:ring-white duration-300 ease-in-out cursor-pointer">
-                <FaInstagram className="h-4 w-4 md:h-6 md:w-6 text-primaryred group-hover:text-white duration-300 ease-in-out" />
-              </li>
-              <li className="bg-white rounded-full h-7 w-7 md:h-9 md:w-9 flex-center group hover:bg-primaryred hover:ring-[1.5px] hover:ring-white duration-300 ease-in-out cursor-pointer">
-                <TiSocialLinkedin className="h-4 w-4 md:h-6 md:w-6 text-primaryred group-hover:text-white duration-300 ease-in-out" />
-              </li>
-              <li className="bg-white rounded-full h-7 w-7 md:h-9 md:w-10 flex-center group hover:bg-primaryred hover:ring-[1.5px] hover:ring-white duration-300 ease-in-out cursor-pointer">
-                <FaYoutube className="h-4 w-4 md:h-6 md:w-6 text-primaryred group-hover:text-white duration-300 ease-in-out" />
-              </li>
+              {socialLinks.map((link, index) => (
+                <li
+                  key={index}
+                  className="bg-white rounded-full h-7 w-7 md:h-9 md:w-9 flex-center group hover:bg-primaryred hover:ring-[1.5px] hover:ring-white duration-300 ease-in-out cursor-pointer"
+                >
+                  <a href={link.href}>{link.icon}</a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -100,10 +154,10 @@ const Header = () => {
             />
           </a>
           {/* Desktop navigation  */}
-          <nav className="hidden lg:block">
+          <nav className="hidden xl:block">
             <ul className="flex gap-x-10">
               <li className="group relative cursor-pointer">
-                <a href="/" className="text-primaryred">
+                <a href="#home" className="text-primaryred relative z-50">
                   Home
                 </a>{" "}
                 <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 h-16 w-16">
@@ -117,7 +171,10 @@ const Header = () => {
                 </div>
               </li>
               <li className="group relative cursor-pointer">
-                <a href="/" className="group-hover:text-primaryred">
+                <a
+                  href="#about"
+                  className="group-hover:text-primaryred relative z-50"
+                >
                   About Us
                 </a>{" "}
                 <div className="hidden group-hover:block top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 h-16 w-16 group-hover:absolute duration-300 ease-in-out">
@@ -131,7 +188,10 @@ const Header = () => {
                 </div>
               </li>
               <li className="group relative cursor-pointer">
-                <a href="/" className="group-hover:text-primaryred">
+                <a
+                  href="#course"
+                  className="group-hover:text-primaryred relative z-50"
+                >
                   Courses
                 </a>{" "}
                 <div className="hidden group-hover:block top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 h-16 w-16 group-hover:absolute duration-300 ease-in-out">
@@ -145,7 +205,10 @@ const Header = () => {
                 </div>
               </li>
               <li className="group relative cursor-pointer">
-                <a href="/" className="group-hover:text-primaryred">
+                <a
+                  href="#course"
+                  className="group-hover:text-primaryred relative z-50"
+                >
                   Test Series
                 </a>{" "}
                 <div className="hidden group-hover:block top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 h-16 w-16 group-hover:absolute duration-300 ease-in-out">
@@ -179,24 +242,24 @@ const Header = () => {
           </nav>
           {/* Buttons  */}
           <div className="hidden md:flex space-x-5">
-            <select
-              name=""
-              id=""
-              className="border rounded-md p-2 bg-white text-primaryred focus:outline-none focus:ring-2 focus:ring-primaryred"
-            >
-              <option value="" className="text-gray-500">
-                Select Language
-              </option>
-              <option value="english">English</option>
-              <option value="hindi">Hindi</option>
-            </select>
+            <CustomDropdown
+              options={[
+                { value: "english", label: "English" },
+                { value: "hindi", label: "Hindi" },
+              ]}
+              onChange={(value) => {
+                // Handle language change
+                console.log("Selected language:", value);
+              }}
+              className="w-44"
+            />
             <Button className="!py-3 !px-8 hover:bg-primaryred !text-white">
               Log in
             </Button>
           </div>
 
           {/* Mobile menu button */}
-          <div className="lg:hidden">
+          <div className="xl:hidden">
             <button
               onClick={toggleMenu}
               className="text-primaryred p-2 focus:outline-none"
@@ -269,17 +332,18 @@ const Header = () => {
             </nav>
 
             <div className="space-y-4">
-              <select
-                name=""
-                id=""
-                className="w-full border rounded-md p-2 bg-white text-primaryred focus:outline-none focus:ring-2 focus:ring-primaryred"
-              >
-                <option value="" className="text-gray-500">
-                  Select Language
-                </option>
-                <option value="english">English</option>
-                <option value="hindi">Hindi</option>
-              </select>
+              <CustomDropdown
+                options={[
+                  { value: "", label: "Select Language" },
+                  { value: "english", label: "English" },
+                  { value: "hindi", label: "Hindi" },
+                ]}
+                onChange={(value) => {
+                  // Handle language change
+                  console.log("Selected language:", value);
+                }}
+                className="w-44"
+              />
               <Button className="w-full !py-3 !px-8 hover:bg-primaryred !text-white">
                 Log in
               </Button>

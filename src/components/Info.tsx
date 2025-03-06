@@ -68,7 +68,7 @@ const Info = () => {
   }, []);
 
   return (
-    <section className="bg-gradient-to-b from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE] padding-yx">
+    <section className="bg-gradient-to-b from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE] padding-top">
       <section className="screen" ref={containerRef}>
         <div
           className="grid grid-cols-1 gap-y-16 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 padding-x"

@@ -69,7 +69,7 @@ const TestimonialCard = () => {
   return (
     <section>
       <div
-        className="relative w-max cursor-pointer overflow-hidden"
+        className="relative  cursor-pointer overflow-hidden"
         ref={cardRef}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -80,6 +80,7 @@ const TestimonialCard = () => {
             alt="testimonial"
             width={320}
             height={240}
+            className="h-full w-full"
           />
         </div>
         {/* Basic Overlay  */}

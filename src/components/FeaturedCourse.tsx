@@ -24,7 +24,7 @@ import {
 const courses = [
   {
     course: "Prelims Master Program",
-    price: 36500,
+    price: "₹ 36500",
     description:
       "This module will contain the full course for UPSC/IAS/CSE foundation EXAM that will be held in year 2025-26.",
     features: [
@@ -52,7 +52,7 @@ const courses = [
   },
   {
     course: "IAS/RAS Foundation Batch",
-    price: 24000,
+    price: "₹ 24000",
     description:
       "This module will contain the full course for UPSC/RPSC PRELIMINARY EXAMs that will be held in year 2025-26.",
     features: [
@@ -80,7 +80,7 @@ const courses = [
   },
   {
     course: "Test Series for UPSC",
-    price: 5000,
+    price: "₹ 5000",
     description:
       "This module will contain full-length tests (1 lakh questions).",
     features: [
@@ -96,7 +96,7 @@ const courses = [
   },
   {
     course: "Pdf Notes for Prelims",
-    price: 10000,
+    price: "₹ 10000",
     description:
       "This module will contain all subject PDFs for UPSC/IAS/CSE PRELIMINARY EXAM that will be held in year 2025-26.",
     features: [
@@ -116,7 +116,7 @@ const FeaturedCourse = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-gradient-to-b from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE] relative padding-top"
+      className="bg-gradient-to-b from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE] relative"
     >
       <div className="bg-gradient-to-t from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE] rounded-t-[12rem] max-md:rounded-t-[6rem] max-sm:rounded-t-[3rem] max-sm:pt-[60px] pt-[100px]">
         <div className="screen space-y-12 max-sm:space-y-8 padding-x">
@@ -124,7 +124,7 @@ const FeaturedCourse = () => {
             <CommonHeading title="Featured Courses" />
           </div>
 
-          <div className="relative px-12 max-sm:px-0" ref={swiperRef}>
+          <div className="relative px-12 max-sm:px-7 " ref={swiperRef}>
             {/* Custom navigation buttons */}
             <button
               className="custom-prev-button group absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white w-10 h-10 max-sm:w-7 max-sm:h-7 rounded-full shadow-lg flex items-center justify-center hover:bg-primaryred hover:text-white transition-colors duration-300"
@@ -157,13 +157,29 @@ const FeaturedCourse = () => {
               breakpoints={{
                 320: {
                   slidesPerView: 1,
+                  spaceBetween: 2,
+                },
+                480: {
+                  slidesPerView: 2,
                   spaceBetween: 10,
                 },
                 640: {
                   slidesPerView: 2,
-                  spaceBetween: 15,
+                  spaceBetween: 10,
+                },
+                768: {
+                  slidesPerView: 2,
+                  spaceBetween: 10,
+                },
+                991: {
+                  slidesPerView: 3,
+                  spaceBetween: 20,
                 },
                 1024: {
+                  slidesPerView: 3,
+                  spaceBetween: 20,
+                },
+                1200: {
                   slidesPerView: 3,
                   spaceBetween: 20,
                 },
@@ -174,7 +190,7 @@ const FeaturedCourse = () => {
             >
               {courses.map((course, index) => (
                 <SwiperSlide key={index}>
-                  <div className="transform transition-transform hover:scale-[1.02] duration-300">
+                  <div className="h-full transform transition-transform hover:scale-[1.02] duration-300">
                     <FeaturedCard
                       title={course.course}
                       description={course.description}

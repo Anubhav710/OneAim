@@ -57,14 +57,22 @@
 }
 
 .padding-top {
-  @apply pt-[70px] sm:pt-[110px] md:pt-[110px] lg:pt-[110px] xl:pt-[110px];
+  @apply pt-[50px] sm:pt-[70px] md:pt-[90px] lg:pt-[100px] xl:pt-[110px];
+}
+
+.padding-bottom {
+  @apply pb-[50px] sm:pb-[70px] md:pb-[90px] lg:pb-[100px] xl:pb-[110px];
+}
+
+.padding-y {
+  @apply py-[50px] sm:py-[70px] md:py-[90px] lg:py-[100px] xl:py-[110px];
 }
 
 .padding-tx {
-  @apply pt-[100px] sm:pt-[120px] md:pt-[150px] lg:pt-[180px] xl:pt-[200px] px-4 sm:px-5 md:px-6 lg:px-8;
+  @apply pt-[100px] sm:pt-[70px] md:pt-[90px] lg:pt-[100px] xl:pt-[110px] px-4 sm:px-5 md:px-6 lg:px-8;
 }
 .padding-yx {
-  @apply py-[50px] sm:py-[110px] md:py-[110px] lg:py-[110px] xl:py-[110px] px-4 sm:px-5 md:px-6 lg:px-8;
+  @apply py-[50px] sm:py-[70px] md:py-[90px] lg:py-[100px] xl:py-[110px]  px-4 sm:px-5 md:px-6 lg:px-8;
 }
 
 /******************************************** Swiper JS Start  ************************************************/
@@ -125,4 +133,49 @@
 .swiper-pagination-bullet-active {
   background-color: #c1151b !important;
   opacity: 1;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 100vh;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1151b;
+  border-radius: 100vh;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c1151b;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #c1151b #f1f1f1;
+}
+
+/* ************************************************* Headings ****************************************************/
+
+.common-subHeading {
+  font-size: clamp(32px, 4vw, 76px);
+}
+
+/* Add these styles to your globals.css */
+
+/* For webkit browsers (Chrome, Safari, etc.) */
+::selection {
+  background: #c1151b;
+  color: white;
+}
+
+/* For Firefox */
+::-moz-selection {
+  background: #c1151b;
+  color: white;
 }

@@ -41,7 +41,7 @@ const FilteredCourse = () => {
   const curveHeight = Math.min(120, dimensions.width * 0.08);
 
   return (
-    <div className="bg-gradient-to-b relative padding-top">
+    <div className="bg-gradient-to-b relative">
       {/* Responsive top curved SVG */}
 
       <section className="bg-[#FFE4CD]  padding-x max-sm:pt-[70px] py-[100px]   relative rounded-b-[12rem] max-sm:rounded-b-[2rem] rounded-t-[12rem] max-sm:rounded-t-[2rem]">

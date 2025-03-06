@@ -62,7 +62,7 @@ const Testimonials = () => {
   return (
     <section
       ref={sectionRef}
-      className="testimonial-gradient-bg bg-gradient-to-t from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE] relative overflow-hidden padding-yx"
+      className="testimonial-gradient-bg bg-gradient-to-t from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE] relative overflow-hidden padding-tx"
     >
       {/* Decorative elements */}
       <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-[#c1151b]/5 blur-2xl"></div>
@@ -82,8 +82,6 @@ const Testimonials = () => {
           </button>
           <Swiper
             modules={[Navigation, Pagination, Mousewheel, FreeMode, Autoplay]}
-            spaceBetween={20}
-            slidesPerView={4}
             freeMode={true}
             grabCursor={true}
             autoplay={{
@@ -98,23 +96,38 @@ const Testimonials = () => {
             breakpoints={{
               320: {
                 slidesPerView: 1,
+                spaceBetween: 2,
+              },
+              480: {
+                slidesPerView: 2,
                 spaceBetween: 10,
               },
               640: {
                 slidesPerView: 2,
-                spaceBetween: 120,
+                spaceBetween: 10,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+              },
+              991: {
+                slidesPerView: 3,
+                spaceBetween: 20,
               },
               1024: {
                 slidesPerView: 3,
-                spaceBetween: 160,
+                spaceBetween: 20,
               },
-              1300: {
+              1200: {
                 slidesPerView: 4,
-                spaceBetween: 160,
+                spaceBetween: 20,
               },
             }}
+            style={{
+              padding: "0px 10px 0px 10px",
+            }}
           >
-            <SwiperSlide>
+            <SwiperSlide className="w-max mx-auto">
               <TestimonialCard />
             </SwiperSlide>
             <SwiperSlide>

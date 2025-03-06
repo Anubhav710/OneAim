@@ -10,12 +10,13 @@ import Info from "@/components/Info";
 import Moto from "@/components/Moto";
 import Team from "@/components/Team";
 import Testimonials from "@/components/Testimonials";
+import TopDown from "@/components/TopDown";
 
 import WhyChooseUs from "@/components/WhyChooseUs";
 
 export default function Home() {
   return (
-    <main className="bg-gradient-to-t from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE] overflow-x-clip ">
+    <main className="bg-gradient-to-t from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE] overflow-x-clip relative">
       <Header />
       <Hero />
       <About />
@@ -29,6 +30,7 @@ export default function Home() {
       <Testimonials />
       <Blog />
       <Footer />
+      <TopDown />
     </main>
   );
 }

@@ -133,7 +133,7 @@ const Team = () => {
         <div className="w-max mx-auto">
           <CommonHeading title="Meet Our Team" />
         </div>
-        <div className="relative px-12 max-sm:px-0">
+        <div className="relative px-12 max-sm:px-0 ">
           {/* Custom navigation buttons */}
           <button
             className="custom-prev-button group absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white w-10 h-10 max-sm:w-7 max-sm:h-7 rounded-full shadow-lg flex items-center justify-center hover:bg-primaryred hover:text-white transition-colors duration-300"
@@ -168,11 +168,27 @@ const Team = () => {
                 slidesPerView: 1,
                 spaceBetween: 2,
               },
+              480: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+              },
               640: {
                 slidesPerView: 2,
-                spaceBetween: 15,
+                spaceBetween: 10,
               },
-              1300: {
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+              },
+              991: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+              },
+              1200: {
                 slidesPerView: 4,
                 spaceBetween: 20,
               },
@@ -205,7 +221,7 @@ const Team = () => {
           </button>
         </div>
 
-        <div className="w-max mx-auto">
+        <div className="w-max mx-auto relative z-30">
           <Button className="!px-16 !text-white">View All</Button>
         </div>
       </section>
