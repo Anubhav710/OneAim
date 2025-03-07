@@ -107,7 +107,7 @@ const FeaturedCard: React.FC<FeaturedCardProps> = ({
             className="bg-black hover:bg-primaryred active:bg-primaryred transition-all duration-300 px-6 sm:px-8 py-2 rounded-full text-white text-sm sm:text-base flex items-center justify-center group"
             aria-label={`Play ${title}`}
           >
-            <span>{buttonText}</span>
+            <span>Read More</span>
             <svg
               className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300"
               fill="none"
