@@ -100,7 +100,7 @@ const Header = () => {
 
   return (
     <header className="z-50 sticky top-0">
-      <div className="header-top text-white bg-primaryred py-[8px]">
+      <div className={`header-top text-white bg-primaryred py-[8px]`}>
         <div className="bg-primaryred flex justify-between items-center screen padding-x">
           <div className="hidden md:block">
             <div className="flex gap-x-10">
@@ -138,8 +138,10 @@ const Header = () => {
         </div>
       </div>
       <div
-        className={`desktop-heading bg-white transition-transform duration-300 ${
-          headerVisible ? "translate-y-0" : "-translate-y-[55%]"
+        className={`desktop-heading bg-white relative  transition-transform duration-300 ${
+          headerVisible
+            ? "translate-y-0"
+            : "md:-translate-y-[55%] -translate-y-[66%] top-full"
         }`}
       >
         <div className="screen py-2 flex items-center justify-between padding-x">

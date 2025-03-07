@@ -43,15 +43,6 @@ const TestimonialCard = () => {
                     group-hover:bg-gradient-to-b group-hover:from-white group-hover:to-pink-50"
       >
         {/* Stars that light up on hover */}
-        <div className="flex justify-center gap-1 mb-4">
-          {[1, 2, 3, 4, 5].map((star) => (
-            <IoStar
-              key={star}
-              className="text-gray-300 transition-colors duration-300 ease-in-out group-hover:text-yellow-400"
-              size={20}
-            />
-          ))}
-        </div>
 
         {/* Testimonial text */}
         <p className="text-center text-gray-600 group-hover:text-gray-800 transition-colors duration-300">
