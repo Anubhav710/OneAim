@@ -19,31 +19,31 @@ const socialLinks = [
   {
     href: "https://www.facebook.com/oneaimeducation/",
     icon: (
-      <FaFacebookF className="h-4 w-4 md:h-6 md:w-6 text-primaryred group-hover:text-white duration-300 ease-in-out" />
+      <FaFacebookF className="h-4 w-4 md:h-5 md:w-5 text-primaryred group-hover:text-white duration-300 ease-in-out" />
     ),
   },
   {
     href: "https://www.instagram.com/oneaim__official/",
     icon: (
-      <FaInstagram className="h-4 w-4 md:h-6 md:w-6 text-primaryred group-hover:text-white duration-300 ease-in-out" />
+      <FaInstagram className="h-4 w-4 md:h-5 md:w-5 text-primaryred group-hover:text-white duration-300 ease-in-out" />
     ),
   },
   {
     href: "https://x.com/OneAim01",
     icon: (
-      <FaXTwitter className="h-4 w-4 md:h-6 md:w-6 text-primaryred group-hover:text-white duration-300 ease-in-out" />
+      <FaXTwitter className="h-4 w-4 md:h-5 md:w-5 text-primaryred group-hover:text-white duration-300 ease-in-out" />
     ),
   },
   {
     href: "https://www.quora.com/profile/One-Aim-5",
     icon: (
-      <FaQuora className="h-4 w-4 md:h-6 md:w-6 text-primaryred group-hover:text-white duration-300 ease-in-out" />
+      <FaQuora className="h-4 w-4 md:h-5 md:w-5 text-primaryred group-hover:text-white duration-300 ease-in-out" />
     ),
   },
   {
     href: "https://www.youtube.com/@OneAim-q7r",
     icon: (
-      <FaYoutube className="h-4 w-4 md:h-6 md:w-6 text-primaryred group-hover:text-white duration-300 ease-in-out" />
+      <FaYoutube className="h-4 w-4 md:h-5 md:w-5 text-primaryred group-hover:text-white duration-300 ease-in-out" />
     ),
   },
 ];
@@ -99,12 +99,8 @@ const Header = () => {
   }, [lastScrollY]);
 
   return (
-    <header
-      className={`z-50 sticky top-0 transition-transform duration-500 shadow-front ${
-        headerVisible ? "translate-y-0" : "-translate-y-full"
-      }`}
-    >
-      <div className="header-top text-white bg-primaryred py-[11px]">
+    <header className="z-50 sticky top-0">
+      <div className="header-top text-white bg-primaryred py-[8px]">
         <div className="bg-primaryred flex justify-between items-center screen padding-x">
           <div className="hidden md:block">
             <div className="flex gap-x-10">
@@ -132,7 +128,7 @@ const Header = () => {
               {socialLinks.map((link, index) => (
                 <li
                   key={index}
-                  className="bg-white rounded-full h-7 w-7 md:h-9 md:w-9 flex-center group hover:bg-primaryred hover:ring-[1.5px] hover:ring-white duration-300 ease-in-out cursor-pointer"
+                  className="bg-white rounded-full h-7 w-7 md:h-7 md:w-7 flex-center group hover:bg-primaryred hover:ring-[1.5px] hover:ring-white duration-300 ease-in-out cursor-pointer"
                 >
                   <a href={link.href}>{link.icon}</a>
                 </li>
@@ -141,14 +137,18 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div className="desktop-heading bg-white">
-        <div className="screen py-4 flex items-center justify-between padding-x">
+      <div
+        className={`desktop-heading bg-white transition-transform duration-300 ${
+          headerVisible ? "translate-y-0" : "-translate-y-[55%]"
+        }`}
+      >
+        <div className="screen py-2 flex items-center justify-between padding-x">
           {/* Logo  */}
           <a href="/" className="cursor-pointer">
             <Image
               src={"/images/logo.svg"}
               alt="logo"
-              width={240}
+              width={120}
               height={50}
               className="w-[170px] md:w-[160px] lg:w-[220px]"
             />
@@ -277,7 +277,7 @@ const Header = () => {
       {isMenuOpen && (
         <div
           ref={mobileMenuRef}
-          className="fixed top-0 right-0 h-screen w-[80%] bg-white shadow-lg z-50 overflow-y-auto"
+          className="fixed top-0 bottom-0 right-0 h-screen w-[80%] bg-white shadow-lg z-50 overflow-y-auto"
         >
           <div className="p-4 flex justify-end">
             <button
@@ -290,12 +290,14 @@ const Header = () => {
 
           <div className="p-6 space-y-8">
             <div className="flex justify-center">
-              <Image
-                src={"/images/logo.svg"}
-                alt="logo"
-                width={140}
-                height={50}
-              />
+              <a href="/">
+                <Image
+                  src={"/images/logo.svg"}
+                  alt="logo"
+                  width={140}
+                  height={50}
+                />
+              </a>
             </div>
 
             <nav>

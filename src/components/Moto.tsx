@@ -78,7 +78,7 @@ const Moto = () => {
             ref={leftImageRef}
             className="w-full md:flex-1  rounded-tr-[5rem] md:rounded-tr-[12rem] overflow-hidden"
           >
-            <div className="relative  h-[300px] max-sm:h-[400px] md:h-full">
+            <div className="relative  h-[400px]  md:h-full">
               <Image
                 src={"/images/moto/vision.png"}
                 alt="Our Values"
@@ -119,9 +119,9 @@ const Moto = () => {
           {/* Right image */}
           <div
             ref={rightImageRef}
-            className="w-full md:flex-1  rounded-bl-[5rem] md:rounded-bl-[12rem] overflow-hidden h-max"
+            className="w-full md:flex-1  bg-red-300 rounded-bl-[5rem] md:rounded-bl-[12rem] overflow-hidden h-max"
           >
-            <div className="relative h-[300px] max-sm:h-[400px] md:h-full">
+            <div className="relative h-[400px] md:h-full">
               <Image
                 src={"/images/moto/vison-2.png"}
                 alt="Our Values"

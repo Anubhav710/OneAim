@@ -172,7 +172,7 @@ const FeaturedCourse = () => {
                   spaceBetween: 10,
                 },
                 991: {
-                  slidesPerView: 3,
+                  slidesPerView: 2,
                   spaceBetween: 20,
                 },
                 1024: {

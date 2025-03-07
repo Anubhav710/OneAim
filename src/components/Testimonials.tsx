@@ -124,7 +124,7 @@ const Testimonials = () => {
               },
             }}
             style={{
-              padding: "0px 10px 0px 10px",
+              padding: "70px 10px 0px 10px",
             }}
           >
             <SwiperSlide className="w-max mx-auto">

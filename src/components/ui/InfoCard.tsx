@@ -16,7 +16,7 @@ const InfoCard = ({
     <div className="relative group transition-all duration-300 hover:scale-105">
       {/* Background shape */}
       <div
-        className={`bg-[#DC8940]/10 absolute top-0 left-0 h-full rounded-2xl w-full rotate-[8deg] transition-all duration-500 group-hover:rotate-[4deg] group-hover:bg-[#DC8940]/20 ${className}`}
+        className={`bg-[#DC8940]/10  absolute top-0 left-0 h-full rounded-2xl w-full rotate-[8deg] transition-all duration-500 group-hover:rotate-[4deg] group-hover:bg-[#DC8940]/20 ${className}`}
       ></div>
 
       {/* Main card */}
@@ -45,7 +45,7 @@ const InfoCard = ({
           {/* Text group with animations */}
           <hgroup className="text-center transition-all duration-300 space-y-2">
             <h2
-              className="text-[#DC8940] text-4xl sm:text-5xl lg:text-6xl font-bold transition-all 
+              className="text-[#DC8940] text-4xl sm:text-5xl  font-bold transition-all 
                           group-hover:text-[#c97b36]"
             >
               {number}k+
