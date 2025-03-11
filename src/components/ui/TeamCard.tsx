@@ -44,7 +44,7 @@ const TeamCard = ({
   image?: string;
 }) => {
   return (
-    <div className="group rounded-2xl relative group overflow-hidden shadow-lg transition-shadow duration-300 hover:shadow-xl  h-[50vh] bg-red-400">
+    <div className="group rounded-2xl relative group overflow-hidden shadow-lg transition-shadow duration-300 hover:shadow-xl h-[clamp(400px,47vw,500px)] bg-red-400">
       <div className="h-full">
         <Image
           src={image}
@@ -54,15 +54,6 @@ const TeamCard = ({
           className="w-full h-full object-cover"
         />
       </div>
-      {/* <div className="transition-transform duration-500 h-full bg-yellow-300">
-        <Image
-          src={image}
-          alt={`${name} team member photo`}
-          width={720}
-          height={320}
-          className="rounded-2xl w-full h-full object-cover"
-        />
-      </div> */}
 
       {/* Overlay */}
       <div className=" scale-y-0 group-hover:scale-y-100 origin-top duration-500 transition-all h-full rounded-2xl w-full absolute top-0 left-0 bg-gradient-to-t from-[#c1151b]/70 to-[#c1151b]/80 backdrop-blur-[2px] flex items-center justify-center px-4 sm:px-6 md:px-8 z-10">

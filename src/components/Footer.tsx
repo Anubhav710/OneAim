@@ -8,6 +8,7 @@ import {
   FaTwitter,
   FaInstagram,
   FaLinkedinIn,
+  FaPhoneAlt,
 } from "react-icons/fa";
 import { IoChevronDown } from "react-icons/io5";
 
@@ -96,7 +97,7 @@ const Footer = () => {
             <div className="space-y-4 pl-1">
               <div className="flex flex-col sm:flex-row items-center sm:items-start gap-y-2 gap-x-3">
                 <div className="bg-white rounded-full h-10 w-10 p-2 flex items-center justify-center shrink-0">
-                  <FaPhone className="text-primaryred" />
+                  <FaPhoneAlt className="text-primaryred " />
                 </div>
                 <hgroup className="text-center sm:text-left">
                   <h4 className="text-lg font-semibold text-primaryred">
