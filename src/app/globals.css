@@ -179,3 +179,10 @@
   background: #c1151b;
   color: white;
 }
+
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

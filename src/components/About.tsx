@@ -98,7 +98,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="bg-gradient-to-b from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE] padding-yx"
+      className="bg-gradient-to-b from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE]  "
     >
       <div className="relative" ref={containerRef}>
         {/* Container  */}

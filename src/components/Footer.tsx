@@ -47,10 +47,10 @@ const Footer = () => {
           </div>
           {/* About Company */}
           <div className="mb-8 sm:mb-0">
-            <h3 className="text-xl md:text-2xl mb-4 text-[#C1151B] font-semibold text-center sm:text-left">
+            <h3 className="text-xl md:text-2xl mb-4 text-[#C1151B] font-semibold text-left">
               About Company
             </h3>
-            <ul className="space-y-2 pl-1 text-center sm:text-left">
+            <ul className="space-y-2 pl-1 text-left">
               <li className="text-[#C1151B]">
                 <a href="/">Home</a>
               </li>
@@ -69,10 +69,10 @@ const Footer = () => {
             </ul>
           </div>
           <div className="mb-8 sm:mb-0">
-            <h3 className="text-xl md:text-2xl mb-4 text-[#C1151B] font-semibold text-center sm:text-left">
+            <h3 className="text-xl md:text-2xl mb-4 text-[#C1151B] font-semibold text-left">
               Legal Links
             </h3>
-            <ul className="space-y-2 pl-1 text-center sm:text-left">
+            <ul className="space-y-2 pl-1 text-left">
               <li className="text-[#C1151B]">
                 <a href="/">Privacy Policy</a>
               </li>
@@ -91,15 +91,17 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h3 className="text-xl md:text-2xl mb-4 text-[#C1151B] font-semibold text-center sm:text-left">
+            <h3 className="text-xl md:text-2xl mb-4 text-[#C1151B] font-semibold text-left sm:text-left">
               Contact Us
             </h3>
             <div className="space-y-4 pl-1">
-              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-y-2 gap-x-3">
-                <div className="bg-white rounded-full h-10 w-10 p-2 flex items-center justify-center shrink-0">
-                  <FaPhoneAlt className="text-primaryred " />
+              <div className="flex  gap-y-2 gap-x-3 w-full">
+                <div className="flex-[0.1]">
+                  <div className="bg-white rounded-full h-10 w-10 p-2 flex items-center justify-center shrink-0 ">
+                    <FaPhoneAlt className="text-primaryred " />
+                  </div>
                 </div>
-                <hgroup className="text-center sm:text-left">
+                <hgroup className="text-left flex-1">
                   <h4 className="text-lg font-semibold text-primaryred">
                     Phone Number
                   </h4>
@@ -108,11 +110,13 @@ const Footer = () => {
                   </p>
                 </hgroup>
               </div>
-              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-y-2 gap-x-3">
-                <div className="bg-white rounded-full h-10 w-10 p-2 flex items-center justify-center shrink-0">
-                  <FaEnvelope className="text-primaryred" />
+              <div className="flex justify-around  flex-row items-center sm:items-start gap-y-2 gap-x-3">
+                <div className="flex-[0.1]">
+                  <div className="bg-white rounded-full h-10 w-10 p-2 flex items-center justify-center shrink-0">
+                    <FaEnvelope className="text-primaryred" />
+                  </div>
                 </div>
-                <hgroup className="text-center sm:text-left">
+                <hgroup className="flex-1 text-left sm:text-left">
                   <h4 className="text-lg font-semibold text-primaryred">
                     Email
                   </h4>
@@ -124,11 +128,13 @@ const Footer = () => {
                   </p>
                 </hgroup>
               </div>
-              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-y-2 gap-x-3">
-                <div className="bg-white rounded-full h-10 w-10 p-2 flex items-center justify-center shrink-0">
-                  <FaMapMarkerAlt className="text-primaryred" />
+              <div className="flex justify-around flex-row items-center sm:items-start gap-y-2 gap-x-3">
+                <div className="flex-[0.1]">
+                  <div className="bg-white rounded-full h-10 w-10 p-2 flex items-center justify-center shrink-0">
+                    <FaMapMarkerAlt className="text-primaryred" />
+                  </div>
                 </div>
-                <hgroup className="text-center sm:text-left">
+                <hgroup className="text-left flex-1">
                   <h4 className="text-lg font-semibold text-primaryred">
                     Address
                   </h4>

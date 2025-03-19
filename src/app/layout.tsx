@@ -2,20 +2,13 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import TopDown from "@/components/TopDown";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
   variable: "--font-poppins",
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -32,7 +25,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${poppins.variable} scroll-smooth`}>
       <body className={`font-poppins antialiased`} suppressHydrationWarning>
+        <Header />
         {children}
+        <Footer />
+        <TopDown />
       </body>
     </html>
   );
