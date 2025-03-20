@@ -84,7 +84,7 @@ const Footer = () => {
                   {socialLinks.map((link, index) => (
                     <li
                       key={index}
-                      className="bg-white rounded-full h-7 w-7 md:h-7 md:w-7 flex-center group hover:bg-primaryred hover:ring-[1.5px] hover:ring-white duration-300 ease-in-out cursor-pointer"
+                      className="bg-white rounded-full h-7 w-7 md:h-8 md:w-8 flex-center group hover:bg-primaryred hover:ring-[1.5px] hover:ring-white duration-300 ease-in-out cursor-pointer"
                     >
                       <a href={link.href}>{link.icon}</a>
                     </li>
@@ -196,8 +196,9 @@ const Footer = () => {
           </div>
         </div>
         <div className="w-full h-[1px] bg-primaryred my-7"></div>
-        <div>
-          <p className="text-primaryred mx-auto w-max text-sm md:text-base">
+        <div className="flex justify-between">
+          <p className="text-primaryred">Copyright by One Aim</p>
+          <p className="text-primaryred  text-sm md:text-base">
             © {new Date().getFullYear()} Designed by{" "}
             <a href="https://utxotech.com/" target="_blank">
               UTXO Tech.

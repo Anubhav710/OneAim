@@ -186,3 +186,7 @@
   justify-content: center;
   align-items: center;
 }
+
+.heading-space {
+  @apply space-y-12 max-sm:space-y-8;
+}

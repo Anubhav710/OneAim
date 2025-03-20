@@ -12,7 +12,6 @@ const AboutUs = () => {
       <OurStory />
       <OurValues />
       <WhatWeOffer />
-      <Team />
     </main>
   );
 };

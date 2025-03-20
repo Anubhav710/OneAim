@@ -3,7 +3,7 @@ import React from "react";
 
 const CommonHeading = ({ title, desc }: { title: string; desc?: string }) => {
   return (
-    <hgroup className="space-y-1">
+    <hgroup className="space-y-3">
       <h2 className="text-primaryred heading relative  w-max">
         <span className="relative z-10">{title}</span>
         <div className="h-32 w-32 absolute top-1/2 -translate-y-1/2 -right-20 -translate-x-1/2">

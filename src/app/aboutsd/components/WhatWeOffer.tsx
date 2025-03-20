@@ -4,15 +4,17 @@ import React from "react";
 
 const WhatWeOffer = () => {
   return (
-    <section className="padding-yx">
+    <section className="padding-yx screen">
       {/* Container  */}
 
-      <div>
+      <div className="space-y-12">
         <div className="mx-auto w-max">
           <CommonHeading title="What We Offer" />
         </div>
         {/* What We offer Card  */}
-        <div>
+        <div className="grid grid-cols-3">
+          <WhatWeOfferCard />
+          <WhatWeOfferCard />
           <WhatWeOfferCard />
         </div>
       </div>

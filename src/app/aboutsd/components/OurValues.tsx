@@ -4,11 +4,14 @@ import React from "react";
 const OurValues = () => {
   return (
     <section className="bg-[#FFEDDD] padding-yx">
-      <div className="screen">
+      <div className="screen space-y-12">
         <div className="mx-auto w-max">
           <CommonHeading title="Our Values" />
         </div>
-        <div>
+        <div className="grid grid-cols-4">
+          <Card />
+          <Card />
+          <Card />
           <Card />
         </div>
       </div>

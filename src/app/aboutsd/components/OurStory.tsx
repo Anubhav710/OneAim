@@ -33,7 +33,7 @@ const OurStory = () => {
           </div>
 
           {/* Information Container  */}
-          <div className="flex-1 space-y-7">
+          <div className="flex-1 flex flex-col gap-y-6 justify-center">
             <CommonHeading
               title="Our Story"
               desc="Founded in [Year], One Aim began with a simple yet powerful vision: to create a global community where individuals can learn, grow, and achieve their goals.
