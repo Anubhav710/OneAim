@@ -9,8 +9,43 @@ import {
   FaInstagram,
   FaLinkedinIn,
   FaPhoneAlt,
+  FaQuora,
+  FaYoutube,
 } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { IoChevronDown } from "react-icons/io5";
+const socialLinks = [
+  {
+    href: "https://www.facebook.com/oneaimeducation/",
+    icon: (
+      <FaFacebookF className="h-4 w-4 md:h-5 md:w-5 text-primaryred group-hover:text-white duration-300 ease-in-out" />
+    ),
+  },
+  {
+    href: "https://www.instagram.com/oneaim__official/",
+    icon: (
+      <FaInstagram className="h-4 w-4 md:h-5 md:w-5 text-primaryred group-hover:text-white duration-300 ease-in-out" />
+    ),
+  },
+  {
+    href: "https://x.com/OneAim01",
+    icon: (
+      <FaXTwitter className="h-4 w-4 md:h-5 md:w-5 text-primaryred group-hover:text-white duration-300 ease-in-out" />
+    ),
+  },
+  {
+    href: "https://www.quora.com/profile/One-Aim-5",
+    icon: (
+      <FaQuora className="h-4 w-4 md:h-5 md:w-5 text-primaryred group-hover:text-white duration-300 ease-in-out" />
+    ),
+  },
+  {
+    href: "https://www.youtube.com/@OneAim-q7r",
+    icon: (
+      <FaYoutube className="h-4 w-4 md:h-5 md:w-5 text-primaryred group-hover:text-white duration-300 ease-in-out" />
+    ),
+  },
+];
 
 const Footer = () => {
   return (
@@ -31,7 +66,7 @@ const Footer = () => {
                 className="w-auto h-auto"
               />
             </div>
-            <h6 className="text-[#C1151B] mt-4">
+            <div className="text-[#C1151B] mt-4">
               <p className="text-sm md:text-base">
                 One Aim - TCNFB is a global community dedicated to empowering
                 individuals through education, mentorship, and actionable
@@ -43,7 +78,20 @@ const Footer = () => {
                   <IoChevronDown />
                 </span>{" "}
               </div>
-            </h6>
+              {/* Social Links */}
+              <div className="pt-5">
+                <ul className="flex gap-x-4">
+                  {socialLinks.map((link, index) => (
+                    <li
+                      key={index}
+                      className="bg-white rounded-full h-7 w-7 md:h-7 md:w-7 flex-center group hover:bg-primaryred hover:ring-[1.5px] hover:ring-white duration-300 ease-in-out cursor-pointer"
+                    >
+                      <a href={link.href}>{link.icon}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
           {/* About Company */}
           <div className="mb-8 sm:mb-0">

@@ -141,43 +141,48 @@ const WhyChooseUs = () => {
     >
       <section className="screen">
         <div className="flex flex-col lg:flex-row gap-8 padding-x">
-          <div className="lg:flex-1 mx-auto lg:mx-0 relative" ref={imageRef}>
-            <div className="relative w-full flex justify-center items-center">
-              <div className="h-[80%] w-[80%] absolute">
-                <Image
-                  src={"/images/choose-us/why-choose-us-3.png"}
-                  alt="why-choose-us"
-                  width={740}
-                  height={240}
-                  className="w-full h-auto"
-                />
-              </div>
-              <div className="h-56 w-56 -top-20 absolute z-50 floating-image">
-                <Image
-                  src={"/images/choose-us/why-choose-us-4.png"}
-                  alt="why-choose-us"
-                  width={120}
-                  height={240}
-                  className="w-full h-full"
-                />
-              </div>
-              <div className="h-[80%] w-[80%]  mx-auto absolute z-40 main-image">
-                <Image
-                  src={"/images/choose-us/why-choose-us.png"}
-                  alt="why-choose-us"
-                  width={740}
-                  height={240}
-                  className="w-full h-auto"
-                />
-              </div>
-              <div className="h-[100%] w-[100%] relative">
-                <Image
-                  src={"/images/choose-us/why-choose-us-2.png"}
-                  alt="why-choose-us"
-                  width={740}
-                  height={240}
-                  className="w-full h-auto"
-                />
+          <div className="flex-1">
+            <div
+              className="lg:flex-1 mx-auto p-10  lg:mx-0 relative"
+              ref={imageRef}
+            >
+              <div className="relative w-full flex justify-center items-center">
+                <div className="h-[80%] w-[80%] absolute">
+                  <Image
+                    src={"/images/choose-us/why-choose-us-3.png"}
+                    alt="why-choose-us"
+                    width={640}
+                    height={240}
+                    className="w-full h-auto"
+                  />
+                </div>
+                <div className="h-56 w-56 -top-20 absolute z-50 floating-image">
+                  <Image
+                    src={"/images/choose-us/why-choose-us-4.png"}
+                    alt="why-choose-us"
+                    width={120}
+                    height={240}
+                    className="w-full h-full"
+                  />
+                </div>
+                <div className="h-[80%] w-[80%]  mx-auto absolute z-40 main-image">
+                  <Image
+                    src={"/images/choose-us/why-choose-us.png"}
+                    alt="why-choose-us"
+                    width={740}
+                    height={240}
+                    className="w-full h-auto"
+                  />
+                </div>
+                <div className="h-[100%] w-[100%] relative">
+                  <Image
+                    src={"/images/choose-us/why-choose-us-2.png"}
+                    alt="why-choose-us"
+                    width={740}
+                    height={240}
+                    className="w-full h-auto"
+                  />
+                </div>
               </div>
             </div>
           </div>
