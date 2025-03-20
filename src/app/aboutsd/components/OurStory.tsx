@@ -4,9 +4,9 @@ import React from "react";
 
 const OurStory = () => {
   return (
-    <section className=" padding-yx bg-[#FFF5EE]">
+    <section className="padding-yx bg-gradient-to-b from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE]">
       <div className="screen">
-        <div className="flex">
+        <div className="flex max-sm:flex-col">
           {/* Image Container  */}
           <div className="flex-1 flex justify-center">
             <div className="relative">

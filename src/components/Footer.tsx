@@ -197,13 +197,21 @@ const Footer = () => {
         </div>
         <div className="w-full h-[1px] bg-primaryred my-7"></div>
         <div className="flex justify-between">
-          <p className="text-primaryred">Copyright by One Aim</p>
-          <p className="text-primaryred  text-sm md:text-base">
-            © {new Date().getFullYear()} Designed by{" "}
-            <a href="https://utxotech.com/" target="_blank">
-              UTXO Tech.
-            </a>
+          <p className="text-primaryred">
+            © {new Date().getFullYear()} Copyright by One Aim
           </p>
+          <div className="flex items-center gap-x-2 ">
+            <p className="text-primaryred">
+              Designed by{" "}
+              <a
+                href="https://utxotech.com/"
+                target="_blank"
+                className="hover:underline"
+              >
+                UTXOTech
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>

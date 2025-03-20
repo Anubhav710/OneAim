@@ -3,13 +3,12 @@ import React from "react";
 
 const OurValues = () => {
   return (
-    <section className="bg-[#FFEDDD] padding-yx">
-      <div className="screen space-y-12">
+    <section className="bg-[#FFEDDD]">
+      <div className="screen space-y-12 padding-yx">
         <div className="mx-auto w-max">
           <CommonHeading title="Our Values" />
         </div>
-        <div className="grid grid-cols-4">
-          <Card />
+        <div className="flex justify-center flex-wrap gap-y-5 gap-x-10">
           <Card />
           <Card />
           <Card />

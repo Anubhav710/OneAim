@@ -4,18 +4,20 @@ import React from "react";
 
 const WhatWeOffer = () => {
   return (
-    <section className="padding-yx screen">
-      {/* Container  */}
+    <section className="padding-yx bg-gradient-to-t from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE]">
+      <div className="screen">
+        {/* Container  */}
 
-      <div className="space-y-12">
-        <div className="mx-auto w-max">
-          <CommonHeading title="What We Offer" />
-        </div>
-        {/* What We offer Card  */}
-        <div className="grid grid-cols-3">
-          <WhatWeOfferCard />
-          <WhatWeOfferCard />
-          <WhatWeOfferCard />
+        <div className="space-y-12">
+          <div className="mx-auto w-max">
+            <CommonHeading title="What We Offer" />
+          </div>
+          {/* What We offer Card  */}
+          <div className="flex justify-center flex-wrap gap-y-5 gap-x-10">
+            <WhatWeOfferCard />
+            <WhatWeOfferCard />
+            <WhatWeOfferCard />
+          </div>
         </div>
       </div>
     </section>

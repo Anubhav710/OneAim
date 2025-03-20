@@ -80,6 +80,7 @@ const Testimonials = () => {
           >
             <FaChevronLeft className="text-primaryred group-hover:text-white" />
           </button>
+
           <Swiper
             modules={[Navigation, Pagination, Mousewheel, FreeMode, Autoplay]}
             freeMode={true}
@@ -127,7 +128,7 @@ const Testimonials = () => {
               padding: "70px 10px 0px 10px",
             }}
           >
-            <SwiperSlide className="w-max mx-auto">
+            <SwiperSlide>
               <TestimonialCard />
             </SwiperSlide>
             <SwiperSlide>
