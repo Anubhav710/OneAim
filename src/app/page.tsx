@@ -16,7 +16,7 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 
 export default function Home() {
   return (
-    <main className="bg-gradient-to-t from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE] overflow-x-clip relative">
+    <main className="bg-gradient-to-b from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE] overflow-x-clip relative">
       <Hero />
       <About />
       <Course />
@@ -28,6 +28,7 @@ export default function Home() {
       <Moto />
       <Testimonials />
       <Blog />
+      <Footer />
     </main>
   );
 }

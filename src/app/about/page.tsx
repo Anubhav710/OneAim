@@ -7,6 +7,7 @@ import WhatWeOffer from "./components/WhatWeOffer";
 import Community from "./components/Community";
 import Testimonials from "@/components/Testimonials";
 import AboutTeam from "./components/AboutTeam";
+import Footer from "@/components/Footer";
 
 const AboutUs = () => {
   return (
@@ -18,6 +19,7 @@ const AboutUs = () => {
       <AboutTeam />
       <Community />
       <Testimonials />
+      <Footer />
     </main>
   );
 };

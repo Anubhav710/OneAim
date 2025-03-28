@@ -10,9 +10,9 @@ const OurStory = () => {
           {/* Image Container  */}
           <div className="flex-1 flex justify-center">
             <div className="relative">
-              <div className="h-[60vh] w-[35vh]  rounded-full overflow-hidden">
+              <div className="h-[60vh] w-[35vh]   rounded-full overflow-hidden">
                 <Image
-                  src={"/images/course/course.png"}
+                  src={"/images/about/about-image.png"}
                   width={5400}
                   height={1200}
                   alt="about-image"
@@ -45,11 +45,25 @@ What started as a small initiative has now grown into a movement that impacts th
               </h6>
               <div className="space-y-4 mt-3">
                 <div className="flex items-center gap-x-4">
-                  <div className="h-12 w-12 bg-red-300 rounded-full"></div>
+                  <div className="h-12 w-12 bg-white p-2 rounded-full">
+                    <Image
+                      src={"/images/about/open-book.svg"}
+                      alt="open-book"
+                      width={210}
+                      height={210}
+                    />
+                  </div>
                   <p>A passion for education and lifelong learning.</p>
                 </div>
                 <div className="flex items-center gap-x-4">
-                  <div className="h-12 w-12 bg-red-300 rounded-full"></div>
+                  <div className="h-12 w-12 bg-white p-2 rounded-full">
+                    <Image
+                      src={"/images/about/handshake.svg"}
+                      alt="handshake"
+                      width={210}
+                      height={210}
+                    />
+                  </div>
                   <p>A passion for education and lifelong learning.</p>
                 </div>
               </div>

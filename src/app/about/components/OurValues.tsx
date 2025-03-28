@@ -8,7 +8,8 @@ const OurValues = () => {
         <div className="mx-auto w-max">
           <CommonHeading title="Our Values" />
         </div>
-        <div className="flex justify-center flex-wrap gap-y-5 gap-x-10">
+        <div className="flex justify-center flex-wrap gap-y-5 gap-x-16">
+          <Card />
           <Card />
           <Card />
           <Card />

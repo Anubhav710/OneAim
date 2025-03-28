@@ -107,7 +107,7 @@ const About = () => {
           <div className="flex-1" ref={imageRef}>
             <div className="relative h-full w-full md:w-[90%] mx-auto">
               <Image
-                src={"/images/about/about-image.png"}
+                src={"/images/about/about-image-2.png"}
                 alt="about-image"
                 width={1850}
                 height={250}

@@ -24,10 +24,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${poppins.variable} scroll-smooth`}>
-      <body className={`font-poppins antialiased`} suppressHydrationWarning>
+      <body
+        className={`font-poppins antialiased bg-gradient-to-t from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE]`}
+        suppressHydrationWarning
+      >
         <Header />
         {children}
-        <Footer />
+
         <TopDown />
       </body>
     </html>

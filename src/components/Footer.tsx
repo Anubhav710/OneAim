@@ -51,7 +51,7 @@ const Footer = () => {
   return (
     <footer
       id="footer"
-      className="text-gray-800 bg-[#FFEDDD]  md:pt-20 pt-10 pb-10"
+      className="text-gray-800 bg-[#FFEDDD]  md:pt-20 pt-10 pb-10 mt-[80px]"
     >
       <div className="screen mx-auto padding-x">
         {/* Company Info  */}

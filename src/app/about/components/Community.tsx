@@ -9,10 +9,31 @@ const Community = () => {
         <div className="flex">
           <div className="flex-1 flex justify-center">
             <div>
-              <div className="h-[30rem] w-[30rem] rounded-full border relative flex items-center justify-center">
-                <div className="h-[14%] w-[14%] rounded-full bg-red-300 absolute -top-8"></div>
-                <div className="h-[14%] w-[14%] rounded-full bg-purple-600 absolute -bottom-8"></div>
-                <div className="h-[14%] w-[14%] rounded-full bg-purple-600 absolute -left-8"></div>
+              <div className="h-[30rem] w-[30rem] rounded-full border border-[#DC8940] relative flex items-center justify-center">
+                <div className="h-[14%] w-[14%] rounded-full    absolute -top-8">
+                  <Image
+                    src={"/images/about/image-1.png"}
+                    alt="image-1"
+                    fill
+                    className="bg-cover h-full w-full"
+                  />
+                </div>
+                <div className="h-[14%] w-[14%] rounded-full  absolute -bottom-8">
+                  <Image
+                    src={"/images/about/image-2.png"}
+                    alt="image-1"
+                    fill
+                    className="bg-cover h-full w-full"
+                  />
+                </div>
+                <div className="h-[14%] w-[14%] rounded-full  absolute -left-8">
+                  <Image
+                    src={"/images/about/image-3.png"}
+                    alt="image-1"
+                    fill
+                    className="bg-cover h-full w-full"
+                  />
+                </div>
                 <div className="h-[40%] w-[40%] rounded-full bg-green-400">
                   <Image
                     src={"/images/image.png"}
