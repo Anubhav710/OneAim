@@ -11,7 +11,7 @@ import Footer from "@/components/Footer";
 
 const AboutUs = () => {
   return (
-    <main className="w-full">
+    <main className="w-full bg-gradient-to-t from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE]">
       <Banner />
       <OurStory />
       <OurValues />
