@@ -1,48 +1,70 @@
+"use client";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
 import CommonHeading from "@/components/ui/CommonHeading";
 import Image from "next/image";
 import React from "react";
 
 const Community = () => {
+  const circleRef = useRef(null);
+
+  useEffect(() => {
+    gsap.to(circleRef.current, {
+      rotation: 360,
+      duration: 10,
+      repeat: -1,
+      ease: "linear",
+    });
+  }, []);
+
   return (
     <section className="padding-yx bg-gradient-to-t from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE]">
       <div className="screen">
-        <div className="flex">
-          <div className="flex-1 flex justify-center">
-            <div>
-              <div className="h-[30rem] w-[30rem] rounded-full border border-[#DC8940] relative flex items-center justify-center">
-                <div className="h-[14%] w-[14%] rounded-full    absolute -top-8">
+        <div className="flex max-sm:flex-col gap-y-10">
+          <div className="flex-1 flex justify-center  relative">
+            <div className="h-[70vh] w-[70vh] max-sm:h-[43vh] max-sm:w-[43vh] flex items-center justify-center">
+              <div
+                ref={circleRef}
+                className="h-[70%] w-[70%] rounded-full border border-[#DC8940] relative flex items-center justify-center"
+              >
+                <div className="rounded-full h-[19%] w-[19%] max-sm:h-[21%] max-sm:w-[21%] absolute md:-top-8 -top-5">
                   <Image
                     src={"/images/about/image-1.png"}
                     alt="image-1"
-                    fill
+                    width={220}
+                    height={120}
                     className="bg-cover h-full w-full"
                   />
                 </div>
-                <div className="h-[14%] w-[14%] rounded-full  absolute -bottom-8">
+                <div className="rounded-full h-[19%] w-[19%] max-sm:h-[21%] max-sm:w-[21%] absolute md:-bottom-8 -bottom-5">
                   <Image
                     src={"/images/about/image-2.png"}
-                    alt="image-1"
-                    fill
+                    alt="image-2"
+                    width={220}
+                    height={120}
                     className="bg-cover h-full w-full"
                   />
                 </div>
-                <div className="h-[14%] w-[14%] rounded-full  absolute -left-8">
+                <div className="rounded-full h-[19%] w-[19%] max-sm:h-[21%] max-sm:w-[21%] absolute md:-right-8 -right-5">
                   <Image
                     src={"/images/about/image-3.png"}
-                    alt="image-1"
-                    fill
+                    alt="image-3"
+                    width={220}
+                    height={120}
                     className="bg-cover h-full w-full"
-                  />
-                </div>
-                <div className="h-[40%] w-[40%] rounded-full bg-green-400">
-                  <Image
-                    src={"/images/image.png"}
-                    alt="images"
-                    width={240}
-                    height={240}
                   />
                 </div>
               </div>
+            </div>
+            {/* I don't want to rotate this container  */}
+            <div className="h-24 w-24 rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+              <Image
+                src={"/images/image.png"}
+                alt="center-image"
+                width={240}
+                height={140}
+                className="h-full w-full bg-cover"
+              />
             </div>
           </div>
           <div className="flex-1 space-y-5 flex flex-col justify-center">

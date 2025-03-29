@@ -6,28 +6,30 @@ const OurStory = () => {
   return (
     <section className="padding-yx bg-gradient-to-b from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE]">
       <div className="screen">
-        <div className="flex max-sm:flex-col">
+        <div className="flex max-sm:flex-col max-sm:gap-y-6">
           {/* Image Container  */}
-          <div className="flex-1 flex justify-center">
-            <div className="relative">
-              <div className="h-[60vh] w-[35vh]   rounded-full overflow-hidden">
-                <Image
-                  src={"/images/about/about-image.png"}
-                  width={5400}
-                  height={1200}
-                  alt="about-image"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="h-[30vh] w-[30vh] absolute top-1/2 -translate-y-1/2 left-1/2">
-                {" "}
-                <Image
-                  src={"/images/about/image.png"}
-                  width={4200}
-                  height={1200}
-                  alt="about-image"
-                  className="w-full h-full object-cover"
-                />
+          <div className="flex-1 ">
+            <div className="flex  w-[70%] mx-auto">
+              <div className="relative ">
+                <div className="h-[50vh] w-[30vh] md:h-[60vh] md:w-[35vh]   rounded-full overflow-hidden">
+                  <Image
+                    src={"/images/about/about-image.png"}
+                    width={5400}
+                    height={1200}
+                    alt="about-image"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="h-[25vh] w-[25vh] md:h-[30vh] md:w-[30vh] absolute top-1/2 -translate-y-1/2 left-1/2">
+                  {" "}
+                  <Image
+                    src={"/images/about/image.png"}
+                    width={4200}
+                    height={1200}
+                    alt="about-image"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>
