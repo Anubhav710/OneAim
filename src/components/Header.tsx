@@ -14,6 +14,7 @@ import gsap from "gsap";
 import { FaFacebookF } from "react-icons/fa6";
 import { FaXTwitter } from "react-icons/fa6";
 import CustomDropdown from "./ui/CustomDropdown";
+import { usePathname } from "next/navigation";
 
 const socialLinks = [
   {
@@ -48,11 +49,21 @@ const socialLinks = [
   },
 ];
 
+const navItems = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About Us" },
+  { href: "#course", label: "Courses" },
+  { href: "#course", label: "Test Series" },
+  { href: "#footer", label: "Contact us" },
+];
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [headerVisible, setHeaderVisible] = useState(true);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const path = usePathname();
+  console.log(path);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -156,90 +167,37 @@ const Header = () => {
             />
           </a>
           {/* Desktop navigation  */}
+
           <nav className="hidden xl:block">
             <ul className="flex gap-x-10">
-              <li className="group relative cursor-pointer">
-                <a href="#home" className="text-primaryred relative z-50">
-                  Home
-                </a>{" "}
-                <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 h-16 w-16">
-                  <Image
-                    src={"/images/icons/button-style.svg"}
-                    alt="style-1"
-                    width={120}
-                    height={120}
-                    className="h-full w-full"
-                  />
-                </div>
-              </li>
-              <li className="group relative cursor-pointer">
-                <a
-                  href="#about"
-                  className="group-hover:text-primaryred relative z-50"
-                >
-                  About Us
-                </a>{" "}
-                <div className="hidden group-hover:block top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 h-16 w-16 group-hover:absolute duration-300 ease-in-out">
-                  <Image
-                    src={"/images/icons/button-style.svg"}
-                    alt="style-1"
-                    width={120}
-                    height={120}
-                    className="h-full w-full"
-                  />
-                </div>
-              </li>
-              <li className="group relative cursor-pointer">
-                <a
-                  href="#course"
-                  className="group-hover:text-primaryred relative z-50"
-                >
-                  Courses
-                </a>{" "}
-                <div className="hidden group-hover:block top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 h-16 w-16 group-hover:absolute duration-300 ease-in-out">
-                  <Image
-                    src={"/images/icons/button-style.svg"}
-                    alt="style-1"
-                    width={120}
-                    height={120}
-                    className="h-full w-full"
-                  />
-                </div>
-              </li>
-              <li className="group relative cursor-pointer">
-                <a
-                  href="#course"
-                  className="group-hover:text-primaryred relative z-50"
-                >
-                  Test Series
-                </a>{" "}
-                <div className="hidden group-hover:block top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 h-16 w-16 group-hover:absolute duration-300 ease-in-out">
-                  <Image
-                    src={"/images/icons/button-style.svg"}
-                    alt="style-1"
-                    width={120}
-                    height={120}
-                    className="h-full w-full"
-                  />
-                </div>
-              </li>
-              <li className="group relative cursor-pointer">
-                <a
-                  href="#footer"
-                  className="group-hover:text-primaryred relative z-50"
-                >
-                  Contact us
-                </a>{" "}
-                <div className="hidden group-hover:block top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 h-16 w-16 group-hover:absolute duration-300 ease-in-out">
-                  <Image
-                    src={"/images/icons/button-style.svg"}
-                    alt="style-1"
-                    width={120}
-                    height={120}
-                    className="h-full w-full"
-                  />
-                </div>
-              </li>
+              {navItems.map((item, index) => {
+                const isActive = path === item.href;
+                return (
+                  <li key={index} className="group relative cursor-pointer">
+                    <a
+                      href={item.href}
+                      className={`relative z-50 ${
+                        isActive
+                          ? "text-primaryred font-bold"
+                          : "group-hover:text-primaryred"
+                      }`}
+                    >
+                      {item.label}
+                    </a>
+                    {isActive && (
+                      <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 h-16 w-16">
+                        <Image
+                          src="/images/icons/button-style.svg"
+                          alt="style-1"
+                          width={120}
+                          height={120}
+                          className="h-full w-full"
+                        />
+                      </div>
+                    )}
+                  </li>
+                );
+              })}
             </ul>
           </nav>
           {/* Buttons  */}
@@ -310,7 +268,10 @@ const Header = () => {
                   </a>
                 </li>
                 <li className="mobile-menu-item border-b pb-2">
-                  <a href="/" className="hover:text-primaryred block text-lg">
+                  <a
+                    href="/about"
+                    className="hover:text-primaryred block text-lg"
+                  >
                     About Us
                   </a>
                 </li>
