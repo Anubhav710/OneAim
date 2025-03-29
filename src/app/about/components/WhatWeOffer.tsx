@@ -70,94 +70,105 @@ const offerings = [
 const WhatWeOffer = () => {
   return (
     <section className="bg-gradient-to-t from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE] py-16 relative">
-      <div className="screen space-y-12 padding-yx">
-        {/* Heading */}
-        <div className="mx-auto w-max">
-          <CommonHeading title="Our Values" />
+      <div className="screen space-y-12">
+        <div className="w-max mx-auto">
+          <CommonHeading title="What We Offer" />
         </div>
+        <div className="relative px-12 max-sm:px-0 ">
+          {/* Custom navigation buttons */}
+          <button
+            className="custom-prev-button group absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white w-10 h-10 max-sm:w-7 max-sm:h-7 rounded-full shadow-lg flex items-center justify-center hover:bg-primaryred hover:text-white transition-colors duration-300"
+            aria-label="Previous slide"
+          >
+            <FaChevronLeft className="text-primaryred group-hover:text-white" />
+          </button>
 
-        {/* Custom navigation buttons */}
-
-        {/* Swiper Carousel */}
-        <Swiper
-          modules={[Navigation, Pagination, Autoplay, EffectFade]}
-          spaceBetween={20}
-          slidesPerView={3}
-          grabCursor={true}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-          }}
-          pagination={{
-            clickable: true,
-            el: ".swiper-pagination",
-            bulletClass: "swiper-pagination-bullet",
-            bulletActiveClass: "swiper-pagination-bullet-active",
-            type: "bullets",
-          }}
-          navigation={{
-            nextEl: ".custom-next-button",
-            prevEl: ".custom-prev-button",
-          }}
-          breakpoints={{
-            320: {
-              slidesPerView: 1,
-              spaceBetween: 2,
-            },
-            480: {
-              slidesPerView: 2,
-              spaceBetween: 10,
-            },
-            640: {
-              slidesPerView: 2,
-              spaceBetween: 10,
-            },
-            768: {
-              slidesPerView: 2,
-              spaceBetween: 10,
-            },
-            991: {
-              slidesPerView: 2,
-              spaceBetween: 20,
-            },
-            1024: {
-              slidesPerView: 3,
-              spaceBetween: 20,
-            },
-            1200: {
-              slidesPerView: 4,
-              spaceBetween: 20,
-            },
-          }}
-          style={{
-            padding: "0px 10px 50px 10px",
-          }}
-        >
-          {offerings.map((member) => (
-            <SwiperSlide key={member.title}>
-              <div className="transform transition-transform hover:scale-[1.02] duration-300">
-                <WhatWeOfferCard
-                  title={member.title}
-                  description={member.description}
-                  image={member.image}
-                  bgColor={
-                    member.title === "Personal Development"
-                      ? "bg-[#DC8940]"
-                      : "bg-[#ffffff]"
-                  }
-                  textColor={
-                    member.title === "Personal Development"
-                      ? "text-[#ffffff]"
-                      : "text-[#000000]"
-                  }
-                />
-              </div>
-            </SwiperSlide>
-          ))}
-          <div className="swiper-pagination"></div>
-        </Swiper>
-        {/* Next Button  */}
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay, EffectFade]}
+            spaceBetween={20}
+            slidesPerView={3}
+            grabCursor={true}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+            pagination={{
+              clickable: true,
+              el: ".swiper-pagination",
+              bulletClass: "swiper-pagination-bullet",
+              bulletActiveClass: "swiper-pagination-bullet-active",
+              type: "bullets",
+            }}
+            navigation={{
+              nextEl: ".custom-next-button",
+              prevEl: ".custom-prev-button",
+            }}
+            breakpoints={{
+              320: {
+                slidesPerView: 1,
+                spaceBetween: 2,
+              },
+              480: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+              },
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+              },
+              991: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+              },
+              1200: {
+                slidesPerView: 4,
+                spaceBetween: 20,
+              },
+            }}
+            style={{
+              padding: "0px 10px 50px 10px",
+            }}
+          >
+            {offerings.map((member) => (
+              <SwiperSlide key={member.title}>
+                <div className="transform transition-transform hover:scale-[1.02] duration-300">
+                  <WhatWeOfferCard
+                    title={member.title}
+                    description={member.description}
+                    image={member.image}
+                    bgColor={
+                      member.title === "Personal Development"
+                        ? "bg-[#DC8940]"
+                        : "bg-[#ffffff]"
+                    }
+                    textColor={
+                      member.title === "Personal Development"
+                        ? "text-[#ffffff]"
+                        : "text-[#000000]"
+                    }
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+            <div className="swiper-pagination"></div>
+          </Swiper>
+          {/* Next Button  */}
+          <button
+            className="custom-next-button group absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white w-10 h-10 max-sm:w-7 max-sm:h-7 rounded-full shadow-lg flex items-center justify-center hover:bg-primaryred hover:text-white transition-colors duration-300"
+            aria-label="Next slide"
+          >
+            <FaChevronRight className="text-primaryred group-hover:text-white" />
+          </button>
+        </div>
       </div>
     </section>
   );

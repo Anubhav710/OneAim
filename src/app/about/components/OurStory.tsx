@@ -20,7 +20,7 @@ const OurStory = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="h-[25vh] w-[25vh] md:h-[30vh] md:w-[30vh] absolute top-1/2 -translate-y-1/2 left-1/2">
+                <div className="h-[22vh] w-[22vh] md:h-[30vh] md:w-[30vh] absolute top-1/2 -translate-y-1/2 left-1/2">
                   {" "}
                   <Image
                     src={"/images/about/image.png"}

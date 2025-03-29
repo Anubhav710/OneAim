@@ -22,7 +22,7 @@ const Community = () => {
       <div className="screen">
         <div className="flex max-sm:flex-col gap-y-10">
           <div className="flex-1 flex justify-center  relative">
-            <div className="h-[70vh] w-[70vh] max-sm:h-[43vh] max-sm:w-[43vh] flex items-center justify-center">
+            <div className="h-[60vh] w-[60vh] max-sm:h-[43vh] max-sm:w-[43vh] flex items-center justify-center">
               <div
                 ref={circleRef}
                 className="h-[70%] w-[70%] rounded-full border border-[#DC8940] relative flex items-center justify-center"
@@ -68,7 +68,7 @@ const Community = () => {
             </div>
           </div>
           <div className="flex-1 space-y-5 flex flex-col justify-center">
-            <CommonHeading title="Join Our Community" />
+            <CommonHeading title="Our Community" />
             <hgroup className="space-y-3">
               <h5 className="text-xl font-medium">
                 At One Aim - we’re more than just an organization – we’re a
