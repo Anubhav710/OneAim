@@ -134,9 +134,7 @@ const WhatWeOffer = () => {
                 spaceBetween: 20,
               },
             }}
-            style={{
-              padding: "0px 10px 50px 10px",
-            }}
+            className="py-5"
           >
             {offerings.map((member) => (
               <SwiperSlide key={member.title}>
