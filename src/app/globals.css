@@ -190,3 +190,19 @@
 .heading-space {
   @apply space-y-12 max-sm:space-y-8;
 }
+
+.absolute-center {
+  @apply top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+}
+
+.grid-4 {
+  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-8;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid red; /* Color of the triangle */
+}

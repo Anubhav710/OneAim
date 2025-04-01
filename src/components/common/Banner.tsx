@@ -1,7 +1,13 @@
 import Image from "next/image";
 import React from "react";
 
-const Banner = () => {
+interface BannerProp {
+  title: string;
+  desp?: string;
+  children?: React.ReactNode;
+}
+
+const Banner = ({ title, desp, children }: BannerProp) => {
   return (
     <section className="bg-gradient-to-t from-[#FFE5E5] via-[#FFEBD9] to-[#FFE5E5] h-[60vh] flex-center space-y-4 relative padding-yx">
       <div className="absolute bottom-0 right-0 left-0 w-full">
@@ -15,7 +21,7 @@ const Banner = () => {
       </div>
       <hgroup className="space-y-5">
         <h2 className="heading text-primaryred relative w-max  mx-auto">
-          <span className="relative z-20">About Us</span>{" "}
+          <span className="relative z-20">{title}</span>{" "}
           <Image
             src={"/images/icons/button-style.svg"}
             alt="style"
@@ -25,21 +31,11 @@ const Banner = () => {
           />
         </h2>
         <p className="text-xl text-center max-sm:text-md font-semibold">
-          Empowering Lives, One Step at a Time
+          {desp}
         </p>
       </hgroup>
       {/* Breadcrumbs */}
-      <div className="flex items-center gap-2 text-sm">
-        <a
-          href="/"
-          className="hover:underline hover:text-primaryred duration-500"
-        >
-          Home
-        </a>
-        <span className="">{">"}</span>
-        <span className="text-primaryred">About Us</span>
-      </div>
-      <div></div>
+      <div className="flex items-center gap-2 text-sm">{children}</div>
     </section>
   );
 };

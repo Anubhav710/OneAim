@@ -124,9 +124,10 @@ const Testimonials = () => {
                 spaceBetween: 20,
               },
             }}
-            style={{
-              padding: "70px 10px 0px 10px",
-            }}
+            // style={{
+            //   padding: "70px 10px 0px 10px",
+            // }}
+            className="!py-20"
           >
             <SwiperSlide>
               <TestimonialCard />

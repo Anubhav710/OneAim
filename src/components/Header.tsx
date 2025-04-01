@@ -52,8 +52,8 @@ const socialLinks = [
 const navItems = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
-  { href: "#course", label: "Courses" },
-  { href: "#course", label: "Test Series" },
+  { href: "/course", label: "Courses" },
+  { href: "/test-series", label: "Test Series" },
   { href: "#footer", label: "Contact us" },
 ];
 
