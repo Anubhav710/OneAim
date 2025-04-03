@@ -1,21 +1,26 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
-import { FaFacebook, FaPhoneAlt, FaQuora } from "react-icons/fa";
+import React, { useState, useEffect, useRef, useCallback } from "react";
+import {
+  FaFacebook,
+  FaPhoneAlt,
+  FaQuora,
+  FaWhatsapp,
+  FaInstagram,
+  FaYoutube,
+} from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
-import { FaWhatsapp } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
+import { FaFacebookF } from "react-icons/fa6";
+import { FaXTwitter } from "react-icons/fa6";
 import { TiSocialLinkedin } from "react-icons/ti";
-import { FaYoutube } from "react-icons/fa";
 import { RiMenu3Line } from "react-icons/ri";
 import { IoMdClose } from "react-icons/io";
 import Image from "next/image";
 import Button from "./ui/Button";
 import gsap from "gsap";
-import { FaFacebookF } from "react-icons/fa6";
-import { FaXTwitter } from "react-icons/fa6";
 import CustomDropdown from "./ui/CustomDropdown";
 import { usePathname } from "next/navigation";
 
+// Constants
 const socialLinks = [
   {
     href: "https://www.facebook.com/oneaimeducation/",
@@ -63,30 +68,30 @@ const Header = () => {
   const [headerVisible, setHeaderVisible] = useState(true);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const path = usePathname();
-  console.log(path);
 
+  // Functions
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const handleScroll = () => {
+  const handleScroll = useCallback(() => {
     if (typeof window !== "undefined") {
       const scrollY = window.scrollY;
-      setHeaderVisible(scrollY < lastScrollY || scrollY < 100);
-      setLastScrollY(scrollY);
+      const scrollDelta = scrollY - lastScrollY;
+
+      setHeaderVisible(scrollY < 100 || (scrollDelta < -5 && scrollY > 100));
+      setLastScrollY(scrollY > 0 ? scrollY : 0);
     }
-  };
+  }, [lastScrollY]);
 
   useEffect(() => {
     if (isMenuOpen && mobileMenuRef.current) {
-      // GSAP animation for mobile menu
       gsap.fromTo(
         mobileMenuRef.current,
         { opacity: 0, x: 100 },
         { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }
       );
 
-      // Animate menu items
       gsap.fromTo(
         ".mobile-menu-item",
         { opacity: 0, y: 20 },
@@ -107,7 +112,7 @@ const Header = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [lastScrollY]);
+  }, [handleScroll]);
 
   return (
     <header className="z-50 sticky top-0">
@@ -116,20 +121,12 @@ const Header = () => {
           <div className="hidden md:block">
             <div className="flex gap-x-10">
               <div className="flex items-center gap-x-2">
-                <div>
-                  <FaPhoneAlt />
-                </div>
-                <div>
-                  <a href="tel: +91-8955249714">+91-8955249714</a>
-                </div>
+                <FaPhoneAlt />
+                <a href="tel: +91-8955249714">+91-8955249714</a>
               </div>
               <div className="flex items-center gap-x-2">
-                <div>
-                  <IoMdMail />
-                </div>
-                <div>
-                  <a href="mailto:info@theoneaim.co.in">info@theoneaim.co.in</a>
-                </div>
+                <IoMdMail />
+                <a href="mailto:info@theoneaim.co.in">info@theoneaim.co.in</a>
               </div>
             </div>
           </div>
@@ -149,14 +146,14 @@ const Header = () => {
         </div>
       </div>
       <div
-        className={`desktop-heading bg-white relative  transition-transform duration-300 ${
+        className={`desktop-heading bg-white relative transition-transform duration-300 ${
           headerVisible
             ? "translate-y-0"
-            : "md:-translate-y-[55%] -translate-y-[66%] top-full"
+            : "-translate-y-[66%] md:-translate-y-[69%] lg:-translate-y-[55%]  top-full"
         }`}
       >
         <div className="screen py-2 flex items-center justify-between padding-x">
-          {/* Logo  */}
+          {/* Logo */}
           <a href="/" className="cursor-pointer">
             <Image
               src={"/images/logo.svg"}
@@ -166,8 +163,8 @@ const Header = () => {
               className="w-[170px] md:w-[160px] lg:w-[220px]"
             />
           </a>
-          {/* Desktop navigation  */}
 
+          {/* Desktop navigation */}
           <nav className="hidden xl:block">
             <ul className="flex gap-x-10">
               {navItems.map((item, index) => {
@@ -200,7 +197,8 @@ const Header = () => {
               })}
             </ul>
           </nav>
-          {/* Buttons  */}
+
+          {/* Buttons */}
           <div className="hidden md:flex space-x-5">
             <CustomDropdown
               options={[
@@ -208,7 +206,6 @@ const Header = () => {
                 { value: "hindi", label: "Hindi" },
               ]}
               onChange={(value) => {
-                // Handle language change
                 console.log("Selected language:", value);
               }}
               className="w-44"
@@ -233,6 +230,7 @@ const Header = () => {
           </div>
         </div>
       </div>
+
       {/* Mobile menu */}
       {isMenuOpen && (
         <div
@@ -262,37 +260,20 @@ const Header = () => {
 
             <nav>
               <ul className="space-y-6">
-                <li className="mobile-menu-item border-b pb-2">
-                  <a href="/" className="text-primaryred block text-lg">
-                    Home
-                  </a>
-                </li>
-                <li className="mobile-menu-item border-b pb-2">
-                  <a
-                    href="/about"
-                    className="hover:text-primaryred block text-lg"
-                  >
-                    About Us
-                  </a>
-                </li>
-                <li className="mobile-menu-item border-b pb-2">
-                  <a href="/" className="hover:text-primaryred block text-lg">
-                    Courses
-                  </a>
-                </li>
-                <li className="mobile-menu-item border-b pb-2">
-                  <a href="/" className="hover:text-primaryred block text-lg">
-                    Test Series
-                  </a>
-                </li>
-                <li className="mobile-menu-item border-b pb-2">
-                  <a
-                    href="#footer"
-                    className="hover:text-primaryred block text-lg relative z-50"
-                  >
-                    Contact us
-                  </a>
-                </li>
+                {navItems.map((item, index) => (
+                  <li key={index} className="mobile-menu-item border-b pb-2">
+                    <a
+                      href={item.href}
+                      className={`text-primaryred block text-lg ${
+                        item.href === path
+                          ? "text-primaryred"
+                          : "hover:text-primaryred"
+                      }`}
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </nav>
 
@@ -304,7 +285,6 @@ const Header = () => {
                   { value: "hindi", label: "Hindi" },
                 ]}
                 onChange={(value) => {
-                  // Handle language change
                   console.log("Selected language:", value);
                 }}
                 className="w-44"

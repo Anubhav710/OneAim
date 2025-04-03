@@ -134,7 +134,7 @@ const WhatWeOffer = () => {
                 spaceBetween: 20,
               },
             }}
-            className="py-5"
+            className="!py-10 "
           >
             {offerings.map((member) => (
               <SwiperSlide key={member.title}>
