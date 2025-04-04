@@ -10,7 +10,7 @@ import TeamCard from "@/components/ui/TeamCard";
 import CommonHeading from "@/components/ui/CommonHeading";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-const teamInfo = [
+export const teamInfo = [
   {
     id: 1,
     name: "Diksha kashyap",
@@ -124,6 +124,81 @@ const teamInfo = [
     description: "Educator.",
     role: "Faculty",
     image: "/images/team/Payalkundu.png",
+  },
+  {
+    id: 10,
+    name: "Charu Singh",
+    qualifications: {
+      experience: "Taken two mains (UPPCS), Content Developer",
+      education: "B.Sc, B.Ed",
+      subject: "General Studies",
+    },
+    description: "Faculty for Hindi medium.",
+    role: "Faculty",
+    image: "/images/team/CharuSingh.png",
+  },
+  {
+    id: 11,
+    name: "Hammad Jafri",
+    qualifications: {
+      experience: "2 years of teaching experience",
+      education: "B.Sc. (Hons) Maths & B.Ed from AMU",
+      subject: "Indian Polity",
+    },
+    description: "Faculty for English medium.",
+    role: "Faculty (Indian Polity)",
+    image: "/images/team/HammadJafri.png",
+  },
+  {
+    id: 12,
+    name: "Sarvesh Mishra",
+    qualifications: {
+      experience:
+        "Worked as a general studies faculty in Eklavya Academy, Indore. Provided 1-on-1 UPSC answer writing mentorship. Worked as a guest faculty in various colleges.",
+      education:
+        "Bachelor of Arts (Political Science, Economics, Sociology), B.Ed",
+      subject: "General Studies",
+    },
+    description: "Experienced mentor in UPSC preparation.",
+    role: "Faculty",
+    image: "/images/team/SarveshMishra.png",
+  },
+  {
+    id: 13,
+    name: "Monu Kumar",
+    qualifications: {
+      experience: "1.5 years",
+      education: "B.A. (Political Science)",
+      subject: "Political Science",
+    },
+    description: "Faculty for Hindi medium.",
+    role: "Faculty",
+    image: "/images/team/MonuKumar.png",
+  },
+  {
+    id: 14,
+    name: "Manish Mishra",
+    qualifications: {
+      experience: "9 years of teaching experience in UPSC and State PCS",
+      education: "B.Sc, M.A. (Sociology), M.A. (History), LLB (Law)",
+      subject: "Sociology & History",
+    },
+    description: "Faculty for Hindi medium.",
+    role: "Faculty",
+    image: "/images/team/ManishMishra.png",
+  },
+  {
+    id: 15,
+    name: "Satyendra Kumar Sharma",
+    qualifications: {
+      experience: "10 years",
+      education: "Post Graduate in Economics, Political Science, and History",
+      subject: "Economics, Political Science, and History",
+    },
+    description:
+      "Faculty at Chahal IAS Academy, Geetanjali IAS Academy, and Chanakya IAS Academy.",
+    role: "Faculty",
+    image: "/images/team/SatyendraKumarSharma.png",
   },
 ];
 
