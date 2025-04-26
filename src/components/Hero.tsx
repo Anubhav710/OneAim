@@ -30,7 +30,7 @@ const Hero = () => {
 
         <section className="h-full  w-full  relative z-10">
           <div className="grid grid-cols-2 max-sm:grid-cols-1 max-sm:grid-rows-auto max-sm:gap-10 items-center h-full ">
-            <div className="w-full space-y-7 max-sm:space-y-5 ">
+            <div className="w-full  max-sm:space-y-5 ">
               <div className="flex flex-wrap items-center gap-x-3 text-xl max-sm:text-lg font-semibold uppercase">
                 <h3>{t("home.welcome")}</h3>
                 <div className="arrow-container border border-primaryred w-28 max-sm:w-[8rem] h-8 rounded-full flex items-center justify-center">
@@ -55,7 +55,7 @@ const Hero = () => {
               </hgroup>
 
               {/* Button Container  */}
-              <div className="space-x-5 flex">
+              <div className="space-x-5 flex items-center ">
                 <div className="w-max">
                   <MagneticButton
                     backgroundColor="#333333"
