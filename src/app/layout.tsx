@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import TopDown from "@/components/TopDown";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -28,9 +29,11 @@ export default function RootLayout({
         className={`font-poppins antialiased bg-gradient-to-b from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE]`}
         suppressHydrationWarning
       >
-        <Header />
-        {children}
-        <TopDown />
+        <LanguageProvider>
+          <Header />
+          {children}
+          <TopDown />
+        </LanguageProvider>
       </body>
     </html>
   );

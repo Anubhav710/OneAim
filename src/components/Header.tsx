@@ -19,7 +19,10 @@ import Button from "./ui/Button";
 import gsap from "gsap";
 import CustomDropdown from "./ui/CustomDropdown";
 import { usePathname } from "next/navigation";
-
+import { useLanguage } from "@/contexts/LanguageContext";
+import { Locale } from "@/i18n/settings";
+import { useTranslation } from "@/hooks/useTranslation";
+import { FaShoppingCart } from "react-icons/fa";
 // Constants
 const socialLinks = [
   {
@@ -54,20 +57,25 @@ const socialLinks = [
   },
 ];
 
-const navItems = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About Us" },
-  { href: "/course", label: "Courses" },
-  { href: "/test-series", label: "Test Series" },
-  { href: "#footer", label: "Contact us" },
-];
-
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [headerVisible, setHeaderVisible] = useState(true);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const path = usePathname();
+  const { locale, setLocale } = useLanguage();
+  const { t } = useTranslation();
+
+  const isLogIn = true;
+
+  // Navigation items with translations
+  const navItems = [
+    { href: "/", label: t("nav.home") },
+    { href: "/about", label: t("nav.about") },
+    { href: "/course", label: t("nav.courses") },
+    { href: "/test-series", label: t("nav.testSeries") },
+    { href: "/contact-us", label: t("nav.contact") },
+  ];
 
   // Functions
   const toggleMenu = () => {
@@ -83,6 +91,14 @@ const Header = () => {
       setLastScrollY(scrollY > 0 ? scrollY : 0);
     }
   }, [lastScrollY]);
+
+  const handleLanguageChange = (value: string) => {
+    if (value === "english") {
+      setLocale("en" as Locale);
+    } else if (value === "hindi") {
+      setLocale("hi" as Locale);
+    }
+  };
 
   useEffect(() => {
     if (isMenuOpen && mobileMenuRef.current) {
@@ -122,11 +138,11 @@ const Header = () => {
             <div className="flex gap-x-10">
               <div className="flex items-center gap-x-2">
                 <FaPhoneAlt />
-                <a href="tel: +91-8955249714">+91-8955249714</a>
+                <a href="tel: +91-8955249714">{t("contact.phone")}</a>
               </div>
               <div className="flex items-center gap-x-2">
                 <IoMdMail />
-                <a href="mailto:info@theoneaim.co.in">info@theoneaim.co.in</a>
+                <a href="mailto:info@theoneaim.co.in">{t("contact.email")}</a>
               </div>
             </div>
           </div>
@@ -199,24 +215,56 @@ const Header = () => {
           </nav>
 
           {/* Buttons */}
-          <div className="hidden md:flex space-x-5">
-            <CustomDropdown
-              options={[
-                { value: "english", label: "English" },
-                { value: "hindi", label: "Hindi" },
-              ]}
-              onChange={(value) => {
-                console.log("Selected language:", value);
-              }}
-              className="w-44"
-            />
-            <Button className="!py-3 !px-8 hover:bg-primaryred !text-white">
-              Log in
-            </Button>
-          </div>
+          {isLogIn ? (
+            <div className="hidden md:flex md:items-center space-x-5">
+              <CustomDropdown
+                options={[
+                  { value: "english", label: "English" },
+                  { value: "hindi", label: "Hindi" },
+                ]}
+                onChange={handleLanguageChange}
+                placeholder={locale === "en" ? "English" : "Hindi"}
+                className="w-44"
+              />
 
+              {/* Cart  */}
+              <div className="h-12 w-12 bg-[#FF7B07]/20 hover:bg-primaryred duration-300 ease-in-out rounded-full flex-center relative cursor-pointer">
+                <Image src="/cart.svg" alt="cart" width={24} height={24} />
+                <div className=" h-5 w-5 absolute bg-[#DC8940] top-1 rounded-full right-0 text-white text-sm flex items-center justify-center">
+                  3
+                </div>
+              </div>
+              <div className="h-12 w-12 bg-[#FF7B07]/20 rounded-full flex-center overflow-hidden cursor-pointer">
+                <Image
+                  src="/images/team/NarendraRajSingh.png"
+                  alt="user"
+                  width={920}
+                  height={20}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            </div>
+          ) : (
+            <div className="hidden md:flex space-x-5">
+              <CustomDropdown
+                options={[
+                  { value: "english", label: "English" },
+                  { value: "hindi", label: "Hindi" },
+                ]}
+                onChange={handleLanguageChange}
+                placeholder={locale === "en" ? "English" : "Hindi"}
+                className="w-44"
+              />
+              <Button
+                href="/auth/login"
+                className="!py-3 !px-8 hover:bg-primaryred !text-white"
+              >
+                {t("auth.login")}
+              </Button>
+            </div>
+          )}
           {/* Mobile menu button */}
-          <div className="xl:hidden">
+          <div className="md:hidden">
             <button
               onClick={toggleMenu}
               className="text-primaryred p-2 focus:outline-none"
@@ -280,17 +328,18 @@ const Header = () => {
             <div className="space-y-4">
               <CustomDropdown
                 options={[
-                  { value: "", label: "Select Language" },
                   { value: "english", label: "English" },
                   { value: "hindi", label: "Hindi" },
                 ]}
-                onChange={(value) => {
-                  console.log("Selected language:", value);
-                }}
+                onChange={handleLanguageChange}
+                placeholder={locale === "en" ? "English" : "Hindi"}
                 className="w-44"
               />
-              <Button className="w-full !py-3 !px-8 hover:bg-primaryred !text-white">
-                Log in
+              <Button
+                href="/auth/login"
+                className="w-full !py-3 !px-8 hover:bg-primaryred !text-white"
+              >
+                {t("auth.login")}
               </Button>
             </div>
 
@@ -298,13 +347,13 @@ const Header = () => {
               <div className="flex items-center gap-x-2 mb-3">
                 <FaPhoneAlt className="text-primaryred" />
                 <a href="tel: +91-8955249714" className="text-gray-700">
-                  +91-8955249714
+                  {t("contact.phone")}
                 </a>
               </div>
               <div className="flex items-center gap-x-2">
                 <IoMdMail className="text-primaryred" />
                 <a href="mailto:info@theoneaim.co.in" className="text-gray-700">
-                  info@theoneaim.co.in
+                  {t("contact.email")}
                 </a>
               </div>
             </div>

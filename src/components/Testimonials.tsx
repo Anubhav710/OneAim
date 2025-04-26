@@ -1,5 +1,6 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+
+import React, { useEffect, useRef, useState } from "react";
 import CommonHeading from "./ui/CommonHeading";
 import TestimonialCard from "./ui/TestimonialCard";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -11,77 +12,105 @@ import {
   Pagination,
 } from "swiper/modules";
 import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/free-mode";
+import "swiper/css/autoplay";
+
+// Register ScrollTrigger with GSAP
+gsap.registerPlugin(ScrollTrigger);
+
 const Testimonials = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef(null);
+  const swiperRef = useRef(null);
+
+  // Generate unique class names for navigation buttons to avoid conflicts
+  const [uniqueId] = useState(
+    () => `swiper-${Math.random().toString(36).substr(2, 9)}`
+  );
+  const prevButtonClass = `custom-prev-button-${uniqueId}`;
+  const nextButtonClass = `custom-next-button-${uniqueId}`;
 
   useEffect(() => {
     if (!sectionRef.current) return;
 
-    // Create a subtle animation for the section
-    gsap.fromTo(
-      ".testimonial-gradient-bg",
-      { backgroundPosition: "0% 0%" },
-      {
-        backgroundPosition: "100% 100%",
-        duration: 20,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      }
-    );
+    // Create a GSAP context to scope animations and clean them up
+    const ctx = gsap.context(() => {
+      // Background gradient animation
+      gsap.fromTo(
+        ".testimonial-gradient-bg",
+        { backgroundPosition: "0% 0%" },
+        {
+          backgroundPosition: "100% 100%",
+          duration: 20,
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut",
+        }
+      );
 
-    // Add subtle animation to the heading
-    gsap.from(".testimonial-heading", {
-      y: 30,
-      opacity: 0,
-      duration: 1,
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 80%",
-        end: "top 60%",
-        scrub: 1,
-      },
-    });
+      // Heading animation
+      gsap.from(".testimonial-heading", {
+        y: 30,
+        opacity: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          end: "top 60%",
+          scrub: 1,
+        },
+      });
 
-    // Add reveal animation for the slider
-    gsap.from(".testimonial-slider", {
-      y: 50,
-      opacity: 0,
-      duration: 1.2,
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 90%",
-        end: "top 50%",
-        scrub: 1,
-      },
-    });
+      // Slider animation
+      gsap.from(".testimonial-slider", {
+        y: 50,
+        opacity: 0,
+        duration: 1.2,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 90%",
+          end: "top 50%",
+          scrub: 1,
+        },
+      });
+    }, sectionRef);
+
+    // Cleanup GSAP animations on unmount
+    return () => {
+      ctx.revert(); // Reverts all animations and kills ScrollTriggers
+    };
   }, []);
 
   return (
     <section
       ref={sectionRef}
-      className="testimonial-gradient-bg bg-gradient-to-t from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE] relative overflow-hidden padding-tx"
+      className="testimonial-gradient-bg bg-gradient-to-t from-[#FFE5E5] via-[#FFEBD9] to-[#FFF5EE] relative overflow-hidden py-16"
     >
       {/* Decorative elements */}
       <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-[#c1151b]/5 blur-2xl"></div>
       <div className="absolute bottom-20 right-10 w-40 h-40 rounded-full bg-[#c1151b]/5 blur-2xl"></div>
 
-      <section className="screen  space-y-12 relative z-10">
+      <section className="max-w-7xl mx-auto space-y-12 relative z-10 px-4">
         <div className="w-max mx-auto">
           <CommonHeading title="Testimonials" />
         </div>
 
         <div className="relative testimonial-slider px-12 max-sm:px-5">
           <button
-            className="custom-prev-button group absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white w-10 h-10 max-sm:w-7 max-sm:h-7 rounded-full shadow-lg flex items-center justify-center hover:bg-primaryred hover:text-white transition-colors duration-300"
+            className={`${prevButtonClass} group absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white w-10 h-10 max-sm:w-7 max-sm:h-7 rounded-full shadow-lg flex items-center justify-center hover:bg-[#c1151b] hover:text-white transition-colors duration-300`}
             aria-label="Previous slide"
           >
-            <FaChevronLeft className="text-primaryred group-hover:text-white" />
+            <FaChevronLeft className="text-[#c1151b] group-hover:text-white" />
           </button>
 
           <Swiper
+            ref={swiperRef}
             modules={[Navigation, Pagination, Mousewheel, FreeMode, Autoplay]}
             freeMode={true}
             grabCursor={true}
@@ -91,71 +120,32 @@ const Testimonials = () => {
               pauseOnMouseEnter: true,
             }}
             navigation={{
-              nextEl: ".custom-next-button",
-              prevEl: ".custom-prev-button",
+              nextEl: `.${nextButtonClass}`,
+              prevEl: `.${prevButtonClass}`,
             }}
             breakpoints={{
-              320: {
-                slidesPerView: 1,
-                spaceBetween: 2,
-              },
-              480: {
-                slidesPerView: 2,
-                spaceBetween: 10,
-              },
-              640: {
-                slidesPerView: 2,
-                spaceBetween: 10,
-              },
-              768: {
-                slidesPerView: 2,
-                spaceBetween: 10,
-              },
-              991: {
-                slidesPerView: 3,
-                spaceBetween: 20,
-              },
-              1024: {
-                slidesPerView: 3,
-                spaceBetween: 20,
-              },
-              1200: {
-                slidesPerView: 4,
-                spaceBetween: 20,
-              },
+              320: { slidesPerView: 1, spaceBetween: 2 },
+              480: { slidesPerView: 2, spaceBetween: 10 },
+              640: { slidesPerView: 2, spaceBetween: 10 },
+              768: { slidesPerView: 2, spaceBetween: 10 },
+              991: { slidesPerView: 3, spaceBetween: 20 },
+              1024: { slidesPerView: 3, spaceBetween: 20 },
+              1200: { slidesPerView: 4, spaceBetween: 20 },
             }}
-            // style={{
-            //   padding: "70px 10px 0px 10px",
-            // }}
             className="!py-20"
           >
-            <SwiperSlide>
-              <TestimonialCard />
-            </SwiperSlide>
-            <SwiperSlide>
-              <TestimonialCard />
-            </SwiperSlide>
-            <SwiperSlide>
-              <TestimonialCard />
-            </SwiperSlide>
-            <SwiperSlide>
-              <TestimonialCard />
-            </SwiperSlide>
-            <SwiperSlide>
-              <TestimonialCard />
-            </SwiperSlide>
-            <SwiperSlide>
-              <TestimonialCard />
-            </SwiperSlide>
-            <SwiperSlide>
-              <TestimonialCard />
-            </SwiperSlide>
+            {[...Array(7)].map((_, index) => (
+              <SwiperSlide key={index}>
+                <TestimonialCard />
+              </SwiperSlide>
+            ))}
           </Swiper>
+
           <button
-            className="custom-next-button group absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white w-10 h-10 max-sm:w-7 max-sm:h-7 rounded-full shadow-lg flex items-center justify-center hover:bg-primaryred hover:text-white transition-colors duration-300"
+            className={`${nextButtonClass} group absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white w-10 h-10 max-sm:w-7 max-sm:h-7 rounded-full shadow-lg flex items-center justify-center hover:bg-[#c1151b] hover:text-white transition-colors duration-300`}
             aria-label="Next slide"
           >
-            <FaChevronRight className="text-primaryred group-hover:text-white" />
+            <FaChevronRight className="text-[#c1151b] group-hover:text-white" />
           </button>
         </div>
       </section>

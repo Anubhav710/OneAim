@@ -21,7 +21,7 @@ const Banner = ({ title, desp, children }: BannerProp) => {
       </div>
       <hgroup className="space-y-5">
         <h2 className="heading text-primaryred relative w-max  mx-auto">
-          <span className="relative z-20">{title}</span>{" "}
+          <h2 className="relative z-20">{title}</h2>{" "}
           <Image
             src={"/images/icons/button-style.svg"}
             alt="style"
